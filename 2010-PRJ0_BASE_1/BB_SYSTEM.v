@@ -33,12 +33,15 @@ module BB_SYSTEM (
 	BB_SYSTEM_RESET_InHigh,
 	BB_SYSTEM_startButton_InLow, 
 	BB_SYSTEM_leftButton_InLow,
-	BB_SYSTEM_rightButton_InLow
+	BB_SYSTEM_rightButton_InLow,
+	BB_SYSTEM_RESET_InHigh2,
+	BB_SYSTEM_leftButton_InLow_2,
+	BB_SySTEM_rightButton_inLow_2
 );
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
- parameter DATAWIDTH_BUS = 8;
+ parameter DATAWIDTH_BUS = 4;
  parameter PRESCALER_DATAWIDTH = 23;
  parameter DISPLAY_DATAWIDTH = 12;
  
@@ -62,11 +65,15 @@ output 		BB_SYSTEM_startButton_Out;
 output 		BB_SYSTEM_leftButton_Out;
 output 		BB_SYSTEM_rightButton_Out;
 
-input		BB_SYSTEM_CLOCK_50;
-input		BB_SYSTEM_RESET_InHigh;
-input		BB_SYSTEM_startButton_InLow;
-input		BB_SYSTEM_leftButton_InLow;
-input		BB_SYSTEM_rightButton_InLow;
+
+input			BB_SYSTEM_CLOCK_50;
+input			BB_SYSTEM_RESET_InHigh;
+input			BB_SYSTEM_startButton_InLow; 
+input			BB_SYSTEM_leftButton_InLow;
+input			BB_SYSTEM_rightButton_InLow;
+input			BB_SYSTEM_RESET_InHigh2;
+input			BB_SYSTEM_leftButton_InLow_2;
+input			BB_SySTEM_rightButton_inLow_2;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
