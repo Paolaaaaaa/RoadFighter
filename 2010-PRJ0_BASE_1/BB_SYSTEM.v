@@ -41,7 +41,7 @@ module BB_SYSTEM (
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
- parameter DATAWIDTH_BUS = 4;
+ parameter DATAWIDTH_BUS = 8; //4?
  parameter PRESCALER_DATAWIDTH = 23;
  parameter DISPLAY_DATAWIDTH = 12;
  
@@ -81,6 +81,8 @@ input			BB_SySTEM_rightButton_inLow_2;
 wire 	BB_SYSTEM_startButton_InLow_cwire;
 wire 	BB_SYSTEM_leftButton_InLow_cwire;
 wire 	BB_SYSTEM_rightButton_InLow_cwire;
+wire 	BB_SYSTEM_leftButton_InLow_2_cwire;
+wire 	BB_SYSTEM_rightButton_InLow_2_cwire;
 
 // GAME
 wire [DATAWIDTH_BUS-1:0] regGAME_data7_wire;
@@ -95,6 +97,23 @@ wire [DATAWIDTH_BUS-1:0] regGAME_data0_wire;
 wire 	[7:0] data_max;
 wire 	[2:0] add;
 
+// COMPONENTS
+
+	//### P1 ###
+		//counters
+			//TIME
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_load_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_LV_cwire;
+			//Lv
+wire [DARAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_cwire;
+
+	//### P2 ###
+		//counters
+			//TIME
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_load_2_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_LV_2_cwire;
+			//Lv
+wire [DARAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_2_cwire;
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -128,9 +147,212 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u2 (
 //#	!!! ACA VAN TUS COMPONENTES
 //######################################################################
 
+								//############################
+								//##########PLAYER 1##########
+								//############################
+								
+		//COUNTERS##############
+SC_RegCOUNTER_Time_u0 (
+//contador de tiempo que define, en función del nivel, las señales de carga
+	.SC_RegCOUNTER_data_OutBUS(BB_SYSTEM_load_2_cwire),
+	.SC_RegGENERAL_CLOCK_50(BB_SYSTEM_CLOCK50),
+	.SC_RegGENERAL_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
+	.SC_RegGENERAL_InBUS_InHigh(BB_SYSTEM_LV_2_cwire)
+	
+);
+
+SC_RegCOUNTER_LV_u0 (
+//contador de niveles pasados hasta el momento
+	.SC_RegGENERAL_data_OutBUS(BB_SYSTEM_LV_2_cwire),
+	.SC_RegGENERAL_CLOC_50(BB_SYSTEM_CLCOK_50),
+	.SC_RegGENERAL_RESET_InHIgh(BB_SYSTEM_RESET_InHIgh),
+	.SC_RegGENERAL_load_InLow(BB_SYSTEM_COUNTER_LV_2_cwire)
+	);
+
+		//MUX##############
+SC_MUX_u0 (
+//multiplexor 1
+
+);
+SC_MUX_u1 (
+//multiplexor 2
+
+);
+SC_MUX_u2 (
+//multiplexor 3
+
+);
+SC_MUX_u3 (
+//multiplexor 4
+
+);
+SC_MUX_u4 (
+//multiplexor 5
+
+);
+SC_MUX_u5 (
+//multiplexor 6
+);
+SC_MUX_u6 (
+//multiplexor 7
+
+);
+SC_MUX_u7 (
+//multiplexor 8
+
+);
+		//REGISTERS##############
+SC_Reg_u0 (
+//Registro 1
+
+);
+SC_Reg_u1 (
+//Registro 2
+
+);
+SC_Reg_u2 (
+//Registro 3
+
+);
+SC_Reg_u3 (
+//Registro 4
+
+);
+SC_Reg_u4 (
+//Registro 5
+
+);
+SC_Reg_u5 (
+//Registro 6
+
+);
+SC_Reg_u6 (
+//Registro 7
+
+);
+SC_Reg_u7 (
+//Registro 8
+
+);
+		//SHIFTER##############
+SC_RegSHIFTER_u0 (
+//Registro de desplazamiento
+
+);
+		//RANDOM##############
+SC_RegRANDOM_u0 (
+//Generador de números aleatorios
+
+);
+		//COMPARATOR##############
+SC_AND_u0(
+//Comparador para la prueba de choque
+
+);
 
 
+								//############################
+								//##########PLAYER 2##########
+								//############################
+								
+		//COUNTERS##############
+SC_RegCOUNTER_Time_u1 (
+//contador de tiempo que define, en función del nivel, las señales de carga
+	.SC_RegCOUNTER_data_OutBUS(BB_SYSTEM_load_cwire),
+	.SC_RegGENERAL_CLOCK_50(BB_SYSTEM_CLOCK50),
+	.SC_RegGENERAL_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
+	.SC_RegGENERAL_InBUS_InHigh(BB_SYSTEM_LV_cwire)
+	
+);
 
+SC_RegCOUNTER_LV_u1 (
+//contador de niveles pasados hasta el momento
+	.SC_RegGENERAL_data_OutBUS(BB_SYSTEM_LV_cwire),
+	.SC_RegGENERAL_CLOC_50(BB_SYSTEM_CLCOK_50),
+	.SC_RegGENERAL_RESET_InHIgh(BB_SYSTEM_RESET_InHIgh),
+	.SC_RegGENERAL_load_InLow(BB_SYSTEM_COUNTER_LV_cwire)
+	);
+
+		//MUX##############
+SC_MUX_u8 (
+//multiplexor 1
+
+);
+SC_MUX_u9 (
+//multiplexor 2
+
+);
+SC_MUX_u10 (
+//multiplexor 3
+
+);
+SC_MUX_u11 (
+//multiplexor 4
+
+);
+SC_MUX_u12 (
+//multiplexor 5
+
+);
+SC_MUX_u13 (
+//multiplexor 6
+);
+SC_MUX_u14 (
+//multiplexor 7
+
+);
+SC_MUX_u15 (
+//multiplexor 8
+
+);
+		//REGISTERS##############
+SC_Reg_u8 (
+//Registro 1
+
+);
+SC_Reg_u9 (
+//Registro 2
+
+);
+SC_Reg_u10 (
+//Registro 3
+
+);
+SC_Reg_u11 (
+//Registro 4
+
+);
+SC_Reg_u12 (
+//Registro 5
+
+);
+SC_Reg_u13 (
+//Registro 6
+
+);
+SC_Reg_u14 (
+//Registro 7
+
+);
+SC_Reg_u15 (
+//Registro 8
+
+);
+		//SHIFTER##############
+SC_RegSHIFTER_u1 (
+//Registro de desplazamiento
+
+);
+		//RANDOM##############
+SC_RegRANDOM_u1 (
+//Generador de números aleatorios
+
+);
+		//COMPARATOR##############
+SC_AND_u1(
+//Comparador para la prueba de choque
+
+);
 //######################################################################
 //#	TO LED MATRIZ: VISUALIZATION
 //######################################################################
