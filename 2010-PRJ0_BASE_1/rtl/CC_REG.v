@@ -18,11 +18,11 @@
 ///Q=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_MUX41 #(parameter MUX41_DATAWIDTH=4)(
+module CC_REG #(parameter CC_REG_WIDTH=4)(
 //////////// OUTPUTS //////////
-	CC_MUX41_z_OutBus,
+	CC_REG_z_OutBus,
 //////////// INPUTS //////////
-	CC_MUX41_data_InBUS
+	CC_REG_data_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -31,8 +31,8 @@ module CC_MUX41 #(parameter MUX41_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output	[MUX41_SELECTWIDTH-1:0]  CC_MUX41_z_OutBus;
-input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
+output	[CC_REG_WIDTH-1:0]  CC_REG_z_OutBus;
+input 	[CC_REG_WIDTH-1:0] CC_REG_data_InBUS;
 //=======================================================Q/
 ///A=======================================================
 //  REG/WIRE declarations
@@ -44,7 +44,7 @@ input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
 always @(CC_MUX41_data_InBUS)
 begin
   
-      CC_MUX41_z_Out = CC_MUX41_data_InBUS;
+      CC_REG_z_OutBus = CC_REG_data_InBUS;
 
 end
 
