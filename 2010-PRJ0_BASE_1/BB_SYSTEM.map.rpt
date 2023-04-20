@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Wed Apr 19 12:54:00 2023
+Wed Apr 19 23:30:58 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -10,22 +10,8 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |BB_SYSTEM|SC_STATEMACHINE:SC_STATEMACHINE_u0|STATE_Register
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
- 14. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u0
- 15. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u1
- 16. Parameter Settings for User Entity Instance: SC_RegSHIFTER:SC_RegSHIFTER_u0
- 17. Parameter Settings for User Entity Instance: SC_RegGENERAL:SC_RegGENERAL_u0
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,20 +38,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 19 12:54:00 2023       ;
+; Analysis & Synthesis Status        ; Failed - Wed Apr 19 23:30:58 2023           ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 79                                          ;
-;     Total combinational functions  ; 73                                          ;
-;     Dedicated logic registers      ; 51                                          ;
-; Total registers                    ; 51                                          ;
-; Total pins                         ; 12                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -161,224 +147,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                       ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------+
-; rtl/SC_RegSHIFTER.v              ; yes             ; User Verilog HDL File  ; C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_RegSHIFTER.v   ;         ;
-; rtl/SC_RegGENERAL.v              ; yes             ; User Verilog HDL File  ; C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_RegGENERAL.v   ;         ;
-; rtl/SC_DEBOUNCE1.v               ; yes             ; User Verilog HDL File  ; C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_DEBOUNCE1.v    ;         ;
-; rtl/SC_STATEMACHINE.v            ; yes             ; User Verilog HDL File  ; C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_STATEMACHINE.v ;         ;
-; BB_SYSTEM.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/BB_SYSTEM.v           ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 79                       ;
-;                                             ;                          ;
-; Total combinational functions               ; 73                       ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 25                       ;
-;     -- 3 input functions                    ; 9                        ;
-;     -- <=2 input functions                  ; 39                       ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 53                       ;
-;     -- arithmetic mode                      ; 20                       ;
-;                                             ;                          ;
-; Total registers                             ; 51                       ;
-;     -- Dedicated logic registers            ; 51                       ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 12                       ;
-;                                             ;                          ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 51                       ;
-; Total fan-out                               ; 374                      ;
-; Average fan-out                             ; 2.53                     ;
-+---------------------------------------------+--------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name     ; Library Name ;
-+-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+-----------------+--------------+
-; |BB_SYSTEM                              ; 73 (0)              ; 51 (0)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |BB_SYSTEM                                    ; BB_SYSTEM       ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u0|       ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u0       ; SC_DEBOUNCE1    ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u1|       ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u1       ; SC_DEBOUNCE1    ; work         ;
-;    |SC_RegGENERAL:SC_RegGENERAL_u0|     ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegGENERAL:SC_RegGENERAL_u0     ; SC_RegGENERAL   ; work         ;
-;    |SC_RegSHIFTER:SC_RegSHIFTER_u0|     ; 3 (3)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegSHIFTER:SC_RegSHIFTER_u0     ; SC_RegSHIFTER   ; work         ;
-;    |SC_STATEMACHINE:SC_STATEMACHINE_u0| ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINE:SC_STATEMACHINE_u0 ; SC_STATEMACHINE ; work         ;
-+-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |BB_SYSTEM|SC_STATEMACHINE:SC_STATEMACHINE_u0|STATE_Register                                                                                                                                                                        ;
-+------------------------------+-----------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-; Name                         ; STATE_Register.STATE_LOAD_1 ; STATE_Register.STATE_LOAD_0 ; STATE_Register.STATE_CLEAR_1 ; STATE_Register.STATE_CLEAR_0 ; STATE_Register.STATE_CHECK_0 ; STATE_Register.STATE_START_0 ; STATE_Register.STATE_RESET_0 ;
-+------------------------------+-----------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-; STATE_Register.STATE_RESET_0 ; 0                           ; 0                           ; 0                            ; 0                            ; 0                            ; 0                            ; 0                            ;
-; STATE_Register.STATE_START_0 ; 0                           ; 0                           ; 0                            ; 0                            ; 0                            ; 1                            ; 1                            ;
-; STATE_Register.STATE_CHECK_0 ; 0                           ; 0                           ; 0                            ; 0                            ; 1                            ; 0                            ; 1                            ;
-; STATE_Register.STATE_CLEAR_0 ; 0                           ; 0                           ; 0                            ; 1                            ; 0                            ; 0                            ; 1                            ;
-; STATE_Register.STATE_CLEAR_1 ; 0                           ; 0                           ; 1                            ; 0                            ; 0                            ; 0                            ; 1                            ;
-; STATE_Register.STATE_LOAD_0  ; 0                           ; 1                           ; 0                            ; 0                            ; 0                            ; 0                            ; 1                            ;
-; STATE_Register.STATE_LOAD_1  ; 1                           ; 0                           ; 0                            ; 0                            ; 0                            ; 0                            ; 1                            ;
-+------------------------------+-----------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-
-
-+--------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                       ;
-+-----------------------------------------------------+--------------------+
-; Register name                                       ; Reason for Removal ;
-+-----------------------------------------------------+--------------------+
-; SC_STATEMACHINE:SC_STATEMACHINE_u0|STATE_Register~4 ; Lost fanout        ;
-; SC_STATEMACHINE:SC_STATEMACHINE_u0|STATE_Register~5 ; Lost fanout        ;
-; SC_STATEMACHINE:SC_STATEMACHINE_u0|STATE_Register~6 ; Lost fanout        ;
-; SC_STATEMACHINE:SC_STATEMACHINE_u0|STATE_Register~7 ; Lost fanout        ;
-; Total Number of Removed Registers = 4               ;                    ;
-+-----------------------------------------------------+--------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 51    ;
-; Number of registers using Synchronous Clear  ; 22    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 23    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------+
-; Inverted Register Statistics                                    ;
-+-------------------------------------------------------+---------+
-; Inverted Register                                     ; Fan out ;
-+-------------------------------------------------------+---------+
-; SC_RegSHIFTER:SC_RegSHIFTER_u0|RegSHIFTER_Register[0] ; 2       ;
-; SC_RegSHIFTER:SC_RegSHIFTER_u0|RegSHIFTER_Register[7] ; 2       ;
-; Total number of inverted registers = 2                ;         ;
-+-------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegGENERAL:SC_RegGENERAL_u0|RegGENERAL_Register[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; DATAWIDTH_BUS  ; 8     ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u0 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u1 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_RegSHIFTER:SC_RegSHIFTER_u0 ;
-+----------------------+-------+----------------------------------------------+
-; Parameter Name       ; Value ; Type                                         ;
-+----------------------+-------+----------------------------------------------+
-; RegSHIFTER_DATAWIDTH ; 8     ; Signed Integer                               ;
-+----------------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_RegGENERAL:SC_RegGENERAL_u0 ;
-+----------------------+-------+----------------------------------------------+
-; Parameter Name       ; Value ; Type                                         ;
-+----------------------+-------+----------------------------------------------+
-; RegGENERAL_DATAWIDTH ; 8     ; Signed Integer                               ;
-+----------------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 12                          ;
-; cycloneiii_ff         ; 51                          ;
-;     CLR               ; 15                          ;
-;     ENA CLR           ; 8                           ;
-;     SCLR              ; 22                          ;
-;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 73                          ;
-;     arith             ; 20                          ;
-;         2 data inputs ; 20                          ;
-;     normal            ; 53                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 25                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.97                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -387,39 +164,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Apr 19 12:53:53 2023
+    Info: Processing started: Wed Apr 19 23:30:33 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regshifter.v
-    Info (12023): Found entity 1: SC_RegSHIFTER File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_RegSHIFTER.v Line: 21
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_reggeneral.v
-    Info (12023): Found entity 1: SC_RegGENERAL File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_RegGENERAL.v Line: 21
+    Info (12023): Found entity 1: SC_RegSHIFTER File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegSHIFTER.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/shift_reg_start_done.v
+    Info (12023): Found entity 1: shift_reg_start_done File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/max7219_ctrl.v
+    Info (12023): Found entity 1: matrix_ctrl File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_debounce1.v
-    Info (12023): Found entity 1: SC_DEBOUNCE1 File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_DEBOUNCE1.v Line: 44
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachine.v
-    Info (12023): Found entity 1: SC_STATEMACHINE File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_STATEMACHINE.v Line: 21
+    Info (12023): Found entity 1: SC_DEBOUNCE1 File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
-    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/BB_SYSTEM.v Line: 21
-Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Info (12128): Elaborating entity "SC_DEBOUNCE1" for hierarchy "SC_DEBOUNCE1:SC_DEBOUNCE1_u0" File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/BB_SYSTEM.v Line: 60
-Warning (10230): Verilog HDL assignment warning at SC_DEBOUNCE1.v(70): truncated value with size 32 to match size of target (11) File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_DEBOUNCE1.v Line: 70
-Info (12128): Elaborating entity "SC_STATEMACHINE" for hierarchy "SC_STATEMACHINE:SC_STATEMACHINE_u0" File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/BB_SYSTEM.v Line: 78
-Info (12128): Elaborating entity "SC_RegSHIFTER" for hierarchy "SC_RegSHIFTER:SC_RegSHIFTER_u0" File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/BB_SYSTEM.v Line: 84
-Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "SC_RegGENERAL:SC_RegGENERAL_u0" File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/BB_SYSTEM.v Line: 94
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Yuu/Documents/git/RoadFighter/MariaAlejandraCabezas-DanielPinilla/PRJ0_RegGENERAL/PRJ0_RegGENERAL_1/rtl/SC_RegSHIFTER.v Line: 63
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 79 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4768 megabytes
-    Info: Processing ended: Wed Apr 19 12:54:00 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:15
+    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 21
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(57) near text: "<";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 57
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(59) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 59
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(59) near text: "<=";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 59
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(61) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 61
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(61) near text: "<=";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 61
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(63) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 63
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(63) near text: "<=";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 63
+Error (10170): Verilog HDL syntax error at SC_RegCOUNTER_Time.v(65) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 65
+Error (10112): Ignored design unit "SC_RegGENERAL" at SC_RegCOUNTER_Time.v(21) due to previous errors File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 21
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/sc_regcounter_time.v
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regcounter_lv.v
+    Info (12023): Found entity 1: SC_RegGENERAL File: C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 21
+Info (144001): Generated suppressed messages file C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 0 warnings
+    Error: Peak virtual memory: 4703 megabytes
+    Error: Processing ended: Wed Apr 19 23:30:59 2023
+    Error: Elapsed time: 00:00:26
+    Error: Total CPU time (on all processors): 00:00:56
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/El supremo/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg.
 
 
