@@ -52,15 +52,15 @@ reg [RegGENERAL_DATAWIDTH-1:0] RegGENRAL_TCount;
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-	if (SC_RegGENERAL_INBUS_InHigh <= 10)
+	if (SC_RegGENERAL_INBUS_InHigh < 11)
 		RegGENERAL_TCount = 0.35;
-	else if (SC_RegGENERAL_INBUS_InHigh >= 10 && <18)
+	else if (SC_RegGENERAL_INBUS_InHigh > 11 && <18)
 		RegGENERAL_TCount = 0;
-	else if (SC_RegGENERAL_INBUS_InHigh > 18 && <=32)
+	else if (SC_RegGENERAL_INBUS_InHigh > 18 && <33)
 		RegGENERAL_TCount = 0.28;
-	else if (SC_RegGENERAL_INBUS_InHigh > 32 && <=40)
+	else if (SC_RegGENERAL_INBUS_InHigh > 32 && <41)
 		RegGENERAL_TCount = 0;
-	else if (SC_RegGENERAL_INBUS_InHigh >40 && <=60)
+	else if (SC_RegGENERAL_INBUS_InHigh >40 && <61)
 		RegGENERAL_TCount = 0.2;
 	else
 		RegGENERAL_Signal = RegGENERAL_Register;

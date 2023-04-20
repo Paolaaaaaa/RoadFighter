@@ -2,3 +2,5 @@
 *.flock
 2010-PRJ0_BASE_1/db/BB_SYSTEM.quiproj.18805.rdr.flock
 2010-PRJ0_BASE_1/db/BB_SYSTEM.db_info
+*.done
+*.qmsg
