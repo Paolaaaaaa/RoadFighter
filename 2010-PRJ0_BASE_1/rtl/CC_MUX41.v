@@ -23,7 +23,9 @@ module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
 	CC_MUX41_z_OutBus,
 //////////// INPUTS //////////
 	CC_MUX41_select_InBUS,
-	CC_MUX41_data_InBUS
+	CC_MUX41_data_InBUS,
+	CC_MUX41_CLOCK_50, // timer
+	CC_MUX41_vel_InBUS //cuanto tiempo para pasar el registro
 );
 //=======================================================
 //  PARAMETER declarations
@@ -35,6 +37,10 @@ module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
 output	[MUX41_SELECTWIDTH-1:0]  CC_MUX41_z_OutBus;
 input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_select_InBUS;
 input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
+input		CC_MUX41_CLOCK_50;
+
+input		CC_MUX41_vel_InBUS;
+
 //=======================================================Q/
 ///A=======================================================
 //  REG/WIRE declarations
