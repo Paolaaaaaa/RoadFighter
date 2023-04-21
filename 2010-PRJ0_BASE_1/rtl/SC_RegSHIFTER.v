@@ -32,7 +32,7 @@ module SC_RegSHIFTER #(parameter RegSHIFTER_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_OutBUS;
+output		[2:0]	SC_RegSHIFTER_data_OutBUS;
 input		SC_RegSHIFTER_contador;
 input		SC_RegSHIFTER_RESET_InHigh;
 //input		[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_InBUS;
@@ -64,5 +64,5 @@ end
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
 assign RegXOR_Signal = RegSHIFTER_Register[0]^RegSHIFTER_Register[1]^RegSHIFTER_Register[2]^RegSHIFTER_Register[3];
-assign SC_RegSHIFTER_data_OutBUS = RegSHIFTER_Register;
+assign SC_RegSHIFTER_data_OutBUS = RegSHIFTER_Register[2:0];
 endmodule
