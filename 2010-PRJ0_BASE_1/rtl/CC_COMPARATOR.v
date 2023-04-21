@@ -18,13 +18,11 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=4)(
-	//////////// OUTPUTS //////////
-	SC_RegGENERAL_data_OutBUS,
-	//////////// INPUTS //////////
-	SC_RegGENERAL_CLOCK_50,
-	SC_RegGENERAL_RESET_InHigh, 
-	SC_RegGENERAL_InBUS_InHigh
+module CC_COMPARATOR #(parameter COMPARATOR_DATAWIDTH=4)(
+    //////////// OUTPUTS //////////
+    CC_COMPARATOR_OutLow,
+    //////////// INPUTS //////////
+    CC_COMPARATOR_data_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -33,42 +31,22 @@ module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[RegGENERAL_DATAWIDTH-1:0]	SC_RegGENERAL_data_OutBUS;
-input		SC_RegGENERAL_CLOCK_50;
-input		SC_RegGENERAL_RESET_InHigh;
-input		SC_RegGENERAL_InBUS_inHigh;	
-
-
+output reg CC_COMPARATOR_OutLow;
+input  [COMPARATOR_DATAWIDTH-1:0] CC_COMPARATOR_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Register;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Signal;
-reg [RegGENERAL_DATAWITDH-1:0] RegGENERAL_Data;
 //=======================================================
 //  Structural coding
 //=======================================================
-//INPUT LOGIC: COMBINATIONAL
-always @(*)
+always @(CC_COMPARATOR_data_InBUS)
 begin
-	if (SC_RegGENERAL_InBUS_InHigh > 4'b0000)
-		RegGENERAL_Register = SC_RegGENERAL_Data+4'b0001;
-	else
-		RegGENERAL_Signal = RegGENERAL_Register;
-	end	
-//STATE REGISTER: SEQUENTIAL
-always @(posedge SC_RegGENERAL_CLOCK_50, posedge SC_RegGENERAL_RESET_InHigh)
-begin
-	if (SC_RegGENERAL_RESET_InHigh == 1'b1)
-		RegGENERAL_Register <= 0;
-	else
-		RegGENERAL_Register <= RegGENERAL_Signal;
+    if( CC_COMPARATOR_data_InBUS == 4'b0000)
+        CC_COMPARATOR_OutLow = 1'b1;
+    else 
+        CC_COMPARATOR_OutLow = 1'b0;
 end
-//=======================================================
-//  Outputs
-//=======================================================
-//OUTPUT LOGIC: COMBINATIONAL
-assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
-assign SC_RegGENERAL_Data = 4'b0000;
 
 endmodule
+
+

@@ -49,13 +49,13 @@ wire RegXOR_Signal;
 always @(*)
 begin	  
 		//RegSHIFTER_Signal = {RegSHIFTER_Register[DATAWIDTH_BUS-2:0],0}
-		RegSHIFTER_Signal = {RegSHIFTER_Register[2:0],RegXOR_Signal};
+		RegSHIFTER_Signal = {RegSHIFTER_Register[2:0],RegXOR_Signal}; //2;0 limita la salida a 3 bits
 	end
 //STATE REGISTER: SEQUENTIAL
 always @(posedge SC_RegSHIFTER_contador, posedge SC_RegSHIFTER_RESET_InHigh)
 begin
 	if (SC_RegSHIFTER_RESET_InHigh == 1'b1)
-		RegSHIFTER_Register <= 4'b1001;
+		RegSHIFTER_Register <= 4'b1001; //4 bits
 	else
 		RegSHIFTER_Register <= RegSHIFTER_Signal;
 end
