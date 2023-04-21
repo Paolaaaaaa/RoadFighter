@@ -1,4 +1,4 @@
-///*######################################################################
+/*######################################################################
 //#	G0B1T: HDL EXAMPLES. 2018.
 //######################################################################
 //# Copyright (C) 2018. F.E.Segura-Quijano (FES) fsegura@uniandes.edu.co
@@ -18,142 +18,50 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_STATEMACHINE (
+module SC_RegSHIFTER #(parameter RegSHIFTER_DATAWIDTH=4)(
 	//////////// OUTPUTS //////////
-	SC_STATEMACHINE_clear_OutLow,
-	SC_STATEMACHINE_load_OutLow,
+	SC_RegSHIFTER_data_OutBUS,
 	//////////// INPUTS //////////
-	SC_STATEMACHINE_CLOCK_50,
-	SC_STATEMACHINE_RESET_InHigh,
-	SC_STATEMACHINE_clear_InLow,
-	SC_STATEMACHINE_load_InLow
-);	
+	SC_RegSHIFTER_REG_In,
+	SC_RegSHIFTER_STATEMACHINE_In,
+	SC_RegSHIFTER_CLOCK_50,
+	SC_RegSHIFTER_bits
+);
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-// states declaration
-localparam STATE_RESET_0									= 0;
-localparam STATE_START_0									= 1;
-localparam STATE_CHECK_0									= 2;
-localparam STATE_CLEAR_0									= 3;
-localparam STATE_CLEAR_1									= 4;
-localparam STATE_LOAD_0										= 5; 
-localparam STATE_LOAD_1										= 6; 
+
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg		SC_STATEMACHINE_clear_OutLow;
-output reg		SC_STATEMACHINE_load_OutLow;
-input			SC_STATEMACHINE_CLOCK_50;
-input 			SC_STATEMACHINE_RESET_InHigh;
-input			SC_STATEMACHINE_clear_InLow;
-input			SC_STATEMACHINE_load_InLow;
+output	[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_OutBUS;
+input		SC_RegSHIFTER_REG_In;
+input		SC_RegSHIFTER_STATEMACHINE_In;
+input		SC_RegSHIFTER_CLOCK_50;
+input		SC_RegSHIFTER_bits[3:0]
+//input		[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [3:0] STATE_Register;
-reg [3:0] STATE_Signal;
+//reg [RegSHIFTER_DATAWIDTH-1:0] RegSHIFTER_Register;
+//reg [RegSHIFTER_DATAWIDTH-1:0] RegSHIFTER_Signal;
+//wire RegXOR_Signal;
+//reg SC_RegSHIFTER_resultado [3:0]
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
-// NEXT STATE LOGIC : COMBINATIONAL
 always @(*)
+
 begin
-	case (STATE_Register)
-		STATE_RESET_0: STATE_Signal = STATE_START_0;
-		STATE_START_0: STATE_Signal = STATE_CHECK_0;
-		STATE_CHECK_0: if (SC_STATEMACHINE_clear_InLow == 1'b0) STATE_Signal = STATE_CLEAR_0;
-							else 	if (SC_STATEMACHINE_load_InLow == 1'b0) STATE_Signal = STATE_LOAD_0;
-							else STATE_Signal = STATE_CHECK_0;
-		STATE_CLEAR_0: STATE_Signal = STATE_CLEAR_1;
-		STATE_CLEAR_1: if (SC_STATEMACHINE_clear_InLow == 1'b0) STATE_Signal = STATE_CLEAR_1;
-							else STATE_Signal = STATE_CHECK_0;
-		STATE_LOAD_0: 	STATE_Signal = STATE_LOAD_1;
-		STATE_LOAD_1: 	if (SC_STATEMACHINE_load_InLow == 1'b0) STATE_Signal = STATE_LOAD_1;
-							else STATE_Signal = STATE_CHECK_0;		
-		default : 		STATE_Signal = STATE_CHECK_0;
-	endcase
-end
-// STATE REGISTER : SEQUENTIAL
-always @ ( posedge SC_STATEMACHINE_CLOCK_50 , posedge SC_STATEMACHINE_RESET_InHigh)
-begin
-	if (SC_STATEMACHINE_RESET_InHigh == 1'b1)
-		STATE_Register <= STATE_RESET_0;
-	else
-		STATE_Register <= STATE_Signal;
+	if (SC_RegSHIFTER_STATEMACHINE_In) //Desplazar a la izquierda
+    SC_RegSHIFTER_data_OutBUS <= {SC_RegSHIFTER_REG_In[2:0], 1'b0};
+  else //Desplazar a la derecha
+    SC_RegSHIFTER_data_OutBUS <= {1'b0, SC_RegSHIFTER_REG_In[2:1]};
 end
 //=======================================================
 //  Outputs
 //=======================================================
-// OUTPUT LOGIC : COMBINATIONAL
-always @ (*)
-begin
-	case (STATE_Register)
-//=========================================================
-// STATE_RESET
-//=========================================================
-	STATE_RESET_0 :	
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b1;
-		end
-//=========================================================
-// STATE_START
-//=========================================================
-	STATE_START_0 :	
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b1;
-		end
-//=========================================================
-// STATE_CHECK
-//=========================================================
-	STATE_CHECK_0 :
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b1;
-		end
-//=========================================================
-// STATE_CLEAR_0
-//=========================================================
-	STATE_CLEAR_0 :	
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b0;  //-
-			SC_STATEMACHINE_load_OutLow = 1'b1;
-		end
-//=========================================================
-// STATE_CLEAR_1
-//=========================================================
-	STATE_CLEAR_1 :	
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b1;
-		end
-//=========================================================
-// STATE_LOAD_0
-//=========================================================
-	STATE_LOAD_0 :
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b0; //-  
-		end
-//=========================================================
-// STATE_LOAD_1
-//=========================================================
-	STATE_LOAD_1 :
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b1; 
-		end
-//=========================================================
-// DEFAULT
-//=========================================================
-	default :
-		begin
-			SC_STATEMACHINE_clear_OutLow = 1'b1;
-			SC_STATEMACHINE_load_OutLow = 1'b1; 
-		end
-	endcase
-end
+//OUTPUT LOGIC: COMBINATIONAL
+
 endmodule
