@@ -51,26 +51,13 @@ reg [RegGENERAL_DATAWIDTH-1:0] RegGENRAL_TCount;
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-<<<<<<< Updated upstream
-	if (SC_RegGENERAL_INBUS_InHigh < 11)
-		RegGENERAL_TCount = 0.35;
-	else if (SC_RegGENERAL_INBUS_InHigh > 11 && <18)
-		RegGENERAL_TCount = 0;
-	else if (SC_RegGENERAL_INBUS_InHigh > 18 && <33)
-		RegGENERAL_TCount = 0.28;
-	else if (SC_RegGENERAL_INBUS_InHigh > 32 && <41)
-		RegGENERAL_TCount = 0;
-	else if (SC_RegGENERAL_INBUS_InHigh >40 && <61)
-		RegGENERAL_TCount = 0.2;
-	else
-		RegGENERAL_Signal = RegGENERAL_Register;
-=======
+
 	if (SC_RegGENERAL_START_InHigh == 1'b1 )
 		RegGENERAL_Register = RegGENERAL_Signal;
 	
 	else 
 		RegGENERAL_Signal <= 0;
->>>>>>> Stashed changes
+
 	end	
 //STATE REGISTER: SEQUENTIAL
 always @(posedge SC_RegGENERAL_CLOCK_50, posedge SC_RegGENERAL_RESET_InHigh)
