@@ -24,7 +24,7 @@ module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=8)(
 	//////////// INPUTS //////////
 	SC_RegGENERAL_CLOCK_50,
 	SC_RegGENERAL_RESET_InHigh,
-	SC_RegGENERAL_INBUS_InHigh
+	SC_RegGENERAL_START_InHigh
 );
 //=======================================================
 //  PARAMETER declarations
@@ -36,7 +36,7 @@ module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=8)(
 output		[RegGENERAL_DATAWIDTH-1:0]	SC_RegGENERAL_data_OutBUS;
 input		SC_RegGENERAL_CLOCK_50;
 input		SC_RegGENERAL_RESET_InHigh;
-input		SC_RegGENERAL_INBUS_InHigh;
+input		SC_RegGENERAL_START_InHigh;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -44,7 +44,6 @@ reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Register;
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Signal;
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Count;
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Time;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_CountC;
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENRAL_TCount;
 //=======================================================
 //  Structural coding
@@ -52,6 +51,7 @@ reg [RegGENERAL_DATAWIDTH-1:0] RegGENRAL_TCount;
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
+<<<<<<< Updated upstream
 	if (SC_RegGENERAL_INBUS_InHigh < 11)
 		RegGENERAL_TCount = 0.35;
 	else if (SC_RegGENERAL_INBUS_InHigh > 11 && <18)
@@ -64,6 +64,13 @@ begin
 		RegGENERAL_TCount = 0.2;
 	else
 		RegGENERAL_Signal = RegGENERAL_Register;
+=======
+	if (SC_RegGENERAL_START_InHigh == 1'b1 )
+		RegGENERAL_Register = RegGENERAL_Signal;
+	
+	else 
+		RegGENERAL_Signal <= 0;
+>>>>>>> Stashed changes
 	end	
 //STATE REGISTER: SEQUENTIAL
 always @(posedge SC_RegGENERAL_CLOCK_50, posedge SC_RegGENERAL_RESET_InHigh)
@@ -76,8 +83,9 @@ end
 //STATE COUNT_1: SEQUENTIAL
 always @(posedge SC_RegGENERAL_CLOCK_50, posedge RegGENERAL_CountC)
 begin
-	if (RegGENERAL_Count*RegGENRAL_TCount == RegGENERAL_Time)
-			RegGENERAL_Register = 1'b1;
+	if (SC_RegGENERAL_CLOK_50 == 50000000)
+			RegGENERAL_Time = RegGENERAL_Count+8'b00000001;
+			RegGENERAL_Register = RegGENERAL_Time;
 	else
 		RegGENERAL_Register <= 0;
 end
@@ -86,7 +94,6 @@ end
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
 assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
-assign RegGENERAL_Time = 1/SC_RegGENERAL_CLOCK_50;
-assign RegGENERAL_Count = RegGENERAL_CountC+1;
+assign RegGENERAL_Counter=8'b00000000;
 
 endmodule
