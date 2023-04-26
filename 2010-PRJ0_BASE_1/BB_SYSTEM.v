@@ -106,6 +106,32 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_load_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_LV_cwire;
 			//Lv
 wire [DARAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_cwire;
+		//MUX
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_1_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_2_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_3_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_4_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_5_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_6_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_7_cwire;
+		//REG
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_1_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_2_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_3_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_4_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_5_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_6_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_7_cwire;
+		//RANDOM
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RANDOM_cwire;
+		// State Machine (General)
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_cwire;
+		// State Machine (Palyer)
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SMP_cwire;
+		// RegShifeter
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RegSHIFTER_cwire;
 
 	//### P2 ###
 		//counters
@@ -114,6 +140,31 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_load_2_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_LV_2_cwire;
 			//Lv
 wire [DARAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_2_cwire;
+		//MUX
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_8_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_9_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_10_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_11_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_12_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_13_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_14_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_15_cwire;
+		//REG
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_8_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_9_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_10_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_11_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_12_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_13_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_14_cwire;
+		//RANDOM
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RANDOM_2_cwire;
+		// State Machine (General)
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_2_cwire;
+		// State Machine (Palyer)
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SMP_2_cwire;
+		// RegShifeter
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RegSHIFTER_2_cwire;
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -151,112 +202,22 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u2 (
 								//##########PLAYER 1##########
 								//############################
 								
+		//STATE MACHINES
+SC_SM_u0 (
+//máquina de estados de registros
+.SC_SM_OutBUS(BB_SYSTEM_SM_cwire),
+.SC_SM_COUNTER_LV(BB_SYSTEM_LV_cwire),
+.SC_SM_COUNTER_TIME(BB_SYSTEM_load_cwire)
+.SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh_cwire)
+);
+SC_SMP_u0 (
+//máquina de estados del jugador
+.SC_SMP_OutBUS(BB_SYSTEM_SMP_cwire),
+.SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
+.SC_SMP_BB_SYSTEM_REG_6_cwire/////////////////////
+);
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u0 (
-//contador de tiempo que define, en función del nivel, las señales de carga
-	.SC_RegCOUNTER_data_OutBUS(BB_SYSTEM_load_2_cwire),
-	.SC_RegGENERAL_CLOCK_50(BB_SYSTEM_CLOCK50),
-	.SC_RegGENERAL_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
-	.SC_RegGENERAL_InBUS_InHigh(BB_SYSTEM_LV_2_cwire)
-	
-);
-
-SC_RegCOUNTER_LV_u0 (
-//contador de niveles pasados hasta el momento
-	.SC_RegGENERAL_data_OutBUS(BB_SYSTEM_LV_2_cwire),
-	.SC_RegGENERAL_CLOC_50(BB_SYSTEM_CLCOK_50),
-	.SC_RegGENERAL_RESET_InHIgh(BB_SYSTEM_RESET_InHIgh),
-	.SC_RegGENERAL_load_InLow(BB_SYSTEM_COUNTER_LV_2_cwire)
-	);
-
-		//MUX##############
-SC_MUX_u0 (
-//multiplexor 1
-
-);
-SC_MUX_u1 (
-//multiplexor 2
-
-);
-SC_MUX_u2 (
-//multiplexor 3
-
-);
-SC_MUX_u3 (
-//multiplexor 4
-
-);
-SC_MUX_u4 (
-//multiplexor 5
-
-);
-SC_MUX_u5 (
-//multiplexor 6
-);
-SC_MUX_u6 (
-//multiplexor 7
-
-);
-SC_MUX_u7 (
-//multiplexor 8
-
-);
-		//REGISTERS##############
-SC_Reg_u0 (
-//Registro 1
-
-);
-SC_Reg_u1 (
-//Registro 2
-
-);
-SC_Reg_u2 (
-//Registro 3
-
-);
-SC_Reg_u3 (
-//Registro 4
-
-);
-SC_Reg_u4 (
-//Registro 5
-
-);
-SC_Reg_u5 (
-//Registro 6
-
-);
-SC_Reg_u6 (
-//Registro 7
-
-);
-SC_Reg_u7 (
-//Registro 8
-
-);
-		//SHIFTER##############
-SC_RegSHIFTER_u0 (
-//Registro de desplazamiento
-
-);
-		//RANDOM##############
-SC_RegRANDOM_u0 (
-//Generador de números aleatorios
-
-);
-		//COMPARATOR##############
-SC_AND_u0(
-//Comparador para la prueba de choque
-
-);
-
-
-								//############################
-								//##########PLAYER 2##########
-								//############################
-								
-		//COUNTERS##############
-SC_RegCOUNTER_Time_u1 (
 //contador de tiempo que define, en función del nivel, las señales de carga
 	.SC_RegCOUNTER_data_OutBUS(BB_SYSTEM_load_cwire),
 	.SC_RegGENERAL_CLOCK_50(BB_SYSTEM_CLOCK50),
@@ -265,93 +226,272 @@ SC_RegCOUNTER_Time_u1 (
 	
 );
 
-SC_RegCOUNTER_LV_u1 (
+SC_RegCOUNTER_LV_u0 (
 //contador de niveles pasados hasta el momento
 	.SC_RegGENERAL_data_OutBUS(BB_SYSTEM_LV_cwire),
-	.SC_RegGENERAL_CLOC_50(BB_SYSTEM_CLCOK_50),
+	.SC_RegGENERAL_CLOCK_50(BB_SYSTEM_CLCOK_50),
 	.SC_RegGENERAL_RESET_InHIgh(BB_SYSTEM_RESET_InHIgh),
 	.SC_RegGENERAL_load_InLow(BB_SYSTEM_COUNTER_LV_cwire)
 	);
 
 		//MUX##############
+SC_MUX_u0 (
+//multiplexor 1
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_RANDOM_cwire)
+);
+SC_MUX_u1 (
+//multiplexor 2
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_1_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYTEM_REG_cwire)
+);
+SC_MUX_u2 (
+//multiplexor 3
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_2_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_1_cwire)
+);
+SC_MUX_u3 (
+//multiplexor 4
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_3_cwire),
+.CC_MUX41_select_Inbus(BB_SYTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_2_cwire)
+);
+SC_MUX_u4 (
+//multiplexor 5
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_4_cwire),
+.CC_MUX41_select_Inbus(BB_SYTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_3_cwire)
+);
+SC_MUX_u5 (
+//multiplexor 6
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_5_cwire),
+.CC_MUX41_select_Inbus(BB_SYTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_4_cwire)
+);
+SC_MUX_u6 (
+//multiplexor 7
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_6_cwire),
+.CC_MUX41_select_Inbus(BB_SYTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_5_cwire)
+);
+SC_MUX_u7 (
+//multiplexor 8
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_7_cwire),
+.CC_MUX41_select_Inbus(BB_SYTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_6_cwire)
+);
+		//REGISTERS##############
+SC_Reg_u0 (
+//Registro 1
+.CC_REG_z_OutBus(BB_SYSTEM_REG_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_cwire)
+);
+SC_Reg_u1 (
+//Registro 2
+.CC_REG_z_OutBus(BB_SYSTEM_REG_1_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_1_cwire)
+);
+SC_Reg_u2 (
+//Registro 3
+.CC_REG_z_OutBus(BB_SYSTEM_REG_2_cwire),
+.CC_REG_data_InBUS(BB_SYTEM_MUX_2_cwire)
+);
+SC_Reg_u3 (
+//Registro 4
+.CC_REG_z_OutBus(BB_SYSTEM_REG_3_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_3_cwire)
+);
+SC_Reg_u4 (
+//Registro 5
+.CC_REG_z_OutBus(BB_SYSTEM_REG_4_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_4_cwire)
+);
+SC_Reg_u5 (
+//Registro 6
+.CC_REG_z_OutBus(BB_SYSTEM_REG_5_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_5_cwire)
+);
+SC_Reg_u6 (
+//Registro 7
+.CC_REG_z_OutBus(BB_SYSTEM_REG_6_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_7_cwire)
+);
+SC_Reg_u7 (
+//Registro 8
+.CC_REG_z_OutBus(BB_SYSTEM_REG_7_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_RegSHIFTER_cwire)
+);
+		//SHIFTER##############
+SC_RegSHIFTER_u0 (
+//Registro de desplazamiento
+.SC_RegSHIFTER_OutBUS(BB_SYSTEM_RegSHIFTER),
+.SC_RegSHIFTER_dataInBUS_InHigh(BB_SYSTEM_REG_7_cwire),
+.sC_RegSHIFTER_data_load(BB_SYSTEM_SMP_cwire)
+);
+		//RANDOM##############
+SC_RegRANDOM_u0 (
+//Generador de números aleatorios
+.SC_RegSHIFTER_data_OutBUS(BB_SYSTEM_RANDOM_cwire),
+.SC_RegSHIFTER_contador(BB_SYSTEM_CLOCK_50), // conectado a la señal de reloj. También se puede conectar al contador, sin embargo, se espera que genere datos sin detenerse (?).
+.SC_RegSHIFTER_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
+);
+		//COMPARATOR##############
+SC_AND_u0(
+//Comparador para la prueba de choque
+.SC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_cwire),
+.SC_COPARATOR_data_InBUS_InHigh(BB_SYSTEM_REG_6_cwire),
+.SC_COMPARATOR_data_InBUS_InHigh_2(BB_SYSTEM_RegSHIFTER_cwire)
+);
+
+
+								//############################
+								//##########PLAYER 2##########
+								//############################
+									
+		//STATE MACHINES
+SC_SM_u1 (
+//máquina de estados de registros
+.SC_SM_OutBUS(BB_SYSTEM_SM_2_cwire),
+.SC_SM_COUNTER_LV(BB_SYSTEM_LV_2_cwire),
+.SC_SM_COUNTER_TIME(BB_SYSTEM_load_2_cwire),
+.SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
+);
+SC_SMP_u1 (
+//máquina de estados del jugador
+.SC_SMP_OutBUS(BB_SYSTEM_SMP_2_cwire),
+.SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
+.SC_SMP_BB_SYSTEM_REG_13_cwire/////////////////////
+);
+		//COUNTERS##############
+SC_RegCOUNTER_Time_u1 (
+//contador de tiempo que define, en función del nivel, las señales de carga
+	.SC_RegCOUNTER_data_OutBUS(BB_SYSTEM_load_2_cwire),
+	.SC_RegGENERAL_CLOCK_50(BB_SYSTEM_CLOCK50),
+	.SC_RegGENERAL_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
+	.SC_RegGENERAL_InBUS_InHigh(BB_SYSTEM_LV_2_cwire)
+	
+);
+
+SC_RegCOUNTER_LV_u1 (
+//contador de niveles pasados hasta el momento
+	.SC_RegGENERAL_data_OutBUS(BB_SYSTEM_LV_2_cwire),
+	.SC_RegGENERAL_CLOC_50(BB_SYSTEM_CLCOK_50),
+	.SC_RegGENERAL_RESET_InHIgh(BB_SYSTEM_RESET_InHIgh_cwire),
+	.SC_RegGENERAL_load_InLow(BB_SYSTEM_COUNTER_LV_2_cwire)
+	);
+
+		//MUX##############
 SC_MUX_u8 (
 //multiplexor 1
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_8_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_RANDOM_Out_cwire)
 );
 SC_MUX_u9 (
 //multiplexor 2
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_9_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_MUX_8_cwire)
 );
 SC_MUX_u10 (
 //multiplexor 3
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_10_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_9_cwire)
 );
 SC_MUX_u11 (
 //multiplexor 4
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_11_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_10_cwire)
 );
 SC_MUX_u12 (
 //multiplexor 5
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_12_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_11_cwire)
 );
 SC_MUX_u13 (
 //multiplexor 6
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_13_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_12_cwire)
 );
 SC_MUX_u14 (
 //multiplexor 7
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_14_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_13_cwire)
 );
 SC_MUX_u15 (
 //multiplexor 8
-
+.CC_MUX41_z_OutBus(BB_SYSTEM_MUX_15_cwire),
+.CC_MUX41_select_InBus(BB_SYSTEM_SM_cwire),
+.CC_MUX41_data_InBus(BB_SYSTEM_REG_14_cwire)
 );
 		//REGISTERS##############
 SC_Reg_u8 (
 //Registro 1
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_8_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_8_cwire)
 );
 SC_Reg_u9 (
 //Registro 2
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_9_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_9_cwire)
 );
 SC_Reg_u10 (
 //Registro 3
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_10_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_10_cwire)
 );
 SC_Reg_u11 (
 //Registro 4
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_10_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_10_cwire)
 );
 SC_Reg_u12 (
 //Registro 5
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_11_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_11_cwire)
 );
 SC_Reg_u13 (
 //Registro 6
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_12_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_13_cwire)
 );
 SC_Reg_u14 (
 //Registro 7
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_13_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_MUX_13_cwire)
 );
 SC_Reg_u15 (
 //Registro 8
-
+.CC_REG_z_OutBus(BB_SYSTEM_REG_14_cwire),
+.CC_REG_data_InBUS(BB_SYSTEM_RegSHIFTER_cwire)
 );
 		//SHIFTER##############
 SC_RegSHIFTER_u1 (
 //Registro de desplazamiento
-
+.SC_RegSHIFTER_OutBUS(BB_SYSTEM_RegSHIFTER_2_cwire),
+.SC_RegSHIFTER_InBUS(BB_SYSTEM_REG_14_cwire)
 );
 		//RANDOM##############
 SC_RegRANDOM_u1 (
 //Generador de números aleatorios
-
+.SC_RegSHIFTER_data_OutBUS(BB_SYSTEM_RANDOM_2_cwire),
+.SC_RegSHIFTER_contador(BB_SYSTEM_CLOCK_50), // conectado a la señal de reloj. También se puede conectar al contador, sin embargo, se espera que genere datos sin detenerse (?).
+.SC_RegSHIFTER_RESET_InHigh(BB_SYSTEM_RESET_InHigh2)
 );
 		//COMPARATOR##############
 SC_AND_u1(
 //Comparador para la prueba de choque
-
+.SC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_2_cwire),
+.SC_COPARATOR_data_InBUS_InHigh(BB_SYSTEM_REG_13_cwire),
+.SC_COMPARATOR_data_InBUS_InHigh_2(BB_SYSTEM_RegSHIFTER_2_cwire)
 );
 //######################################################################
 //#	TO LED MATRIZ: VISUALIZATION
