@@ -339,9 +339,9 @@ SC_RegRANDOM_u0 (
 .SC_RegSHIFTER_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
 );
 		//COMPARATOR##############
-SC_AND_u0(
+CC_COMPARATOR_u0(
 //Comparador para la prueba de choque
-.SC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_cwire),
+.CC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_cwire),
 .SC_COPARATOR_data_InBUS_InHigh(BB_SYSTEM_REG_6_cwire),
 .SC_COMPARATOR_data_InBUS_InHigh_2(BB_SYSTEM_RegSHIFTER_cwire)
 );
@@ -487,9 +487,9 @@ SC_RegRANDOM_u1 (
 .SC_RegSHIFTER_RESET_InHigh(BB_SYSTEM_RESET_InHigh2)
 );
 		//COMPARATOR##############
-SC_AND_u1(
+CC_COMPARATOR_u1(
 //Comparador para la prueba de choque
-.SC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_2_cwire),
+.CC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_2_cwire),
 .SC_COPARATOR_data_InBUS_InHigh(BB_SYSTEM_REG_13_cwire),
 .SC_COMPARATOR_data_InBUS_InHigh_2(BB_SYSTEM_RegSHIFTER_2_cwire)
 );
