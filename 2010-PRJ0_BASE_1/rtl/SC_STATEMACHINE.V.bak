@@ -30,7 +30,7 @@ module SC_STATEMACHINE (
 //=======================================================
 //  PARAMETER declarations
 //=========
-//=============================================
+=============================================
 output	[MUX41_SELECTWIDTH-1:0]  SC_STATEMACHINE_SIGNAL_OUT;
 input 	[MUX41_SELECTWIDTH-1:0] SC_STATEMACHINE_INBUS_TIME;
 input 	SC_STATEMACHINE_RESET_INHigh;

@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=4)(
+module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=4)(
 	//////////// OUTPUTS //////////
 	SC_RegGENERAL_data_OutBUS,
 	//////////// INPUTS //////////

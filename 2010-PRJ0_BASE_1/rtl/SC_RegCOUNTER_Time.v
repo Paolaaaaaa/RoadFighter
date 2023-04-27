@@ -18,13 +18,13 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=8)(
+module SC_RegGENERAL_Time #(parameter RegGENERAL_DATAWIDTH=8)(
 	//////////// OUTPUTS //////////
-	SC_RegGENERAL_data_OutBUS,
+	SC_RegGENERAL_Time_data_OutBUS,
 	//////////// INPUTS //////////
-	SC_RegGENERAL_CLOCK_50,
-	SC_RegGENERAL_RESET_InHigh,
-	SC_RegGENERAL_START_InHigh
+	SC_RegGENERAL_Time_CLOCK_50,
+	SC_RegGENERAL_Time_RESET_InHigh,
+	SC_upSPEEDCOUNTER_upcount_InLow
 );
 //=======================================================
 //  PARAMETER declarations
@@ -33,54 +33,37 @@ module SC_RegGENERAL #(parameter RegGENERAL_DATAWIDTH=8)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[RegGENERAL_DATAWIDTH-1:0]	SC_RegGENERAL_data_OutBUS;
-input		SC_RegGENERAL_CLOCK_50;
-input		SC_RegGENERAL_RESET_InHigh;
-input		SC_RegGENERAL_START_InHigh;
+output		[upSPEEDCOUNTER_DATAWIDTH-1:0]	SC_RegGENERAL_Time_data_OutBUS;
+input		SC_RegGENERAL_Time_CLOCK_50;
+input		SC_RegGENERAL_Time_RESET_InHigh;
+input		SC_upSPEEDCOUNTER_upcount_InLow;
 //=======================================================
-//  REG/WIRE declarations
-//=======================================================
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Register;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Signal;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Count;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Time;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENRAL_TCount;
+//  REG/WIRE declarations//=======================================================
+reg [upSPEEDCOUNTER_DATAWIDTH-1:0] upSPEEDCOUNTER_Register;
+reg [upSPEEDCOUNTER_DATAWIDTH-1:0] upSPEEDCOUNTER_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-
-	if (SC_RegGENERAL_START_InHigh == 1'b1 )
-		RegGENERAL_Register = RegGENERAL_Signal;
-	
-	else 
-		RegGENERAL_Signal <= 0;
-
+	if (SC_upSPEEDCOUNTER_upcount_InLow == 1'b0)
+		upSPEEDCOUNTER_Signal = upSPEEDCOUNTER_Register + 1'b1;
+	else
+		upSPEEDCOUNTER_Signal = upSPEEDCOUNTER_Register;
 	end	
 //STATE REGISTER: SEQUENTIAL
-always @(posedge SC_RegGENERAL_CLOCK_50, posedge SC_RegGENERAL_RESET_InHigh)
+always @(posedge SC_RegGENERAL_Time_CLOCK_50, posedge SC_RegGENERAL_Time_RESET_InHigh)
 begin
-	if (SC_RegGENERAL_RESET_InHigh == 1'b1)
-		RegGENERAL_Register <= 0;
+	if (SC_RegGENERAL_Time_RESET_InHigh  == 1'b1)
+		upSPEEDCOUNTER_Register <= 0;
 	else
-		RegGENERAL_Register <= RegGENERAL_Signal;
-end
-//STATE COUNT_1: SEQUENTIAL
-always @(posedge SC_RegGENERAL_CLOCK_50, posedge RegGENERAL_CountC)
-begin
-	if (SC_RegGENERAL_CLOK_50 == 50000000)
-			RegGENERAL_Time = RegGENERAL_Count+8'b00000001;
-			RegGENERAL_Register = RegGENERAL_Time;
-	else
-		RegGENERAL_Register <= 0;
+		upSPEEDCOUNTER_Register <= upSPEEDCOUNTER_Signal;
 end
 //=======================================================
 //  Outputs
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
-assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
-assign RegGENERAL_Counter=8'b00000000;
+assign SC_RegGENERAL_Time_data_OutBUS = upSPEEDCOUNTER_Register;
 
 endmodule

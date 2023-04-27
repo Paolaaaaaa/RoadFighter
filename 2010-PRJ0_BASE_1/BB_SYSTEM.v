@@ -44,7 +44,7 @@ module BB_SYSTEM (
  parameter DATAWIDTH_BUS = 8; //4?
  parameter PRESCALER_DATAWIDTH = 23;
  parameter DISPLAY_DATAWIDTH = 12;
- 
+
  parameter DATA_FIXED_INITREGPOINT_7 = 8'b00010000;
  parameter DATA_FIXED_INITREGPOINT_6 = 8'b00111000;
  parameter DATA_FIXED_INITREGPOINT_5 = 8'b01111100;
@@ -83,7 +83,6 @@ wire 	BB_SYSTEM_leftButton_InLow_cwire;
 wire 	BB_SYSTEM_rightButton_InLow_cwire;
 wire 	BB_SYSTEM_leftButton_InLow_2_cwire;
 wire 	BB_SYSTEM_rightButton_InLow_2_cwire;
-
 // GAME
 wire [DATAWIDTH_BUS-1:0] regGAME_data7_wire;
 wire [DATAWIDTH_BUS-1:0] regGAME_data6_wire;
@@ -97,6 +96,7 @@ wire [DATAWIDTH_BUS-1:0] regGAME_data0_wire;
 wire 	[7:0] data_max;
 wire 	[2:0] add;
 
+
 // COMPONENTS
 
 	//### P1 ###
@@ -105,7 +105,7 @@ wire 	[2:0] add;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_load_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_LV_cwire;
 			//Lv
-wire [DARAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_cwire;
 		//MUX
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_1_cwire;
@@ -139,7 +139,7 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RegSHIFTER_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_load_2_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_LV_2_cwire;
 			//Lv
-wire [DARAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_2_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_COUNTER_LV_2_cwire;
 		//MUX
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_8_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_MUX_9_cwire;
@@ -202,20 +202,20 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u2 (
 								//##########PLAYER 1##########
 								//############################
 								
-		//STATE MACHINES
+/*		//STATE MACHINES
 SC_SM_u0 (
 //máquina de estados de registros
 .SC_SM_OutBUS(BB_SYSTEM_SM_cwire),
 .SC_SM_COUNTER_LV(BB_SYSTEM_LV_cwire),
-.SC_SM_COUNTER_TIME(BB_SYSTEM_load_cwire)
+.SC_SM_COUNTER_TIME(BB_SYSTEM_load_cwire),
 .SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh_cwire)
 );
 SC_SMP_u0 (
 //máquina de estados del jugador
 .SC_SMP_OutBUS(BB_SYSTEM_SMP_cwire),
-.SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
-.SC_SMP_BB_SYSTEM_REG_6_cwire/////////////////////
-);
+.SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
+.SC_SMP_BB_SYSTEM_REG_6_cwire()/////////////////////
+);*/
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u0 (
 //contador de tiempo que define, en función del nivel, las señales de carga
@@ -352,6 +352,8 @@ CC_COMPARATOR_u0(
 								//############################
 									
 		//STATE MACHINES
+		
+/*
 SC_SM_u1 (
 //máquina de estados de registros
 .SC_SM_OutBUS(BB_SYSTEM_SM_2_cwire),
@@ -364,7 +366,7 @@ SC_SMP_u1 (
 .SC_SMP_OutBUS(BB_SYSTEM_SMP_2_cwire),
 .SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
 .SC_SMP_BB_SYSTEM_REG_13_cwire/////////////////////
-);
+);*/
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u1 (
 //contador de tiempo que define, en función del nivel, las señales de carga
@@ -377,10 +379,10 @@ SC_RegCOUNTER_Time_u1 (
 
 SC_RegCOUNTER_LV_u1 (
 //contador de niveles pasados hasta el momento
-	.SC_RegGENERAL_data_OutBUS(BB_SYSTEM_LV_2_cwire),
-	.SC_RegGENERAL_CLOC_50(BB_SYSTEM_CLCOK_50),
-	.SC_RegGENERAL_RESET_InHIgh(BB_SYSTEM_RESET_InHIgh_cwire),
-	.SC_RegGENERAL_load_InLow(BB_SYSTEM_COUNTER_LV_2_cwire)
+	.SC_RegGENERAL_LV_data_OutBUS(BB_SYSTEM_LV_2_cwire),
+	.SC_RegGENERAL_LV_CLOCK_50(BB_SYSTEM_CLCOK_50),
+	.SC_RegGENERAL_LV_RESET_InHigh(BB_SYSTEM_RESET_InHIgh_cwire),
+	.SC_RegGENERAL_LV_InBUS_InHigh(BB_SYSTEM_COUNTER_LV_2_cwire)
 	);
 
 		//MUX##############
