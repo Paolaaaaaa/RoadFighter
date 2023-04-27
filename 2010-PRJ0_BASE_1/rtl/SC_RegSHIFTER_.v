@@ -38,7 +38,7 @@ output	[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_OutBUS;
 input		SC_RegSHIFTER_REG_In;
 input		SC_RegSHIFTER_STATEMACHINE_In;
 input		SC_RegSHIFTER_CLOCK_50;
-input		SC_RegSHIFTER_bits[3:0]
+input		SC_RegSHIFTER_bits[3:0];
 //input		[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations

@@ -18,12 +18,11 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_COMPARATOR #(parameter COMPARATOR_DATAWIDTH=4)(
-    //////////// OUTPUTS //////////
-    CC_COMPARATOR_OutLow,
-    //////////// INPUTS //////////
-    CC_COMPARATOR_data_InBUS_InHigh
-	 CC_COMPARATOR_data_InBUS_2_InHigh
+module CC_BOTTOMSIDECOMPARATOR #(parameter BOTTOMSIDECOMPARATOR_DATAWIDTH=8)(
+//////////// OUTPUTS //////////
+	CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow,
+//////////// INPUTS //////////
+	CC_BOTTOMSIDECOMPARATOR_data_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -32,23 +31,21 @@ module CC_COMPARATOR #(parameter COMPARATOR_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg CC_COMPARATOR_OutLow;
-input  [COMPARATOR_DATAWIDTH-1:0] CC_COMPARATOR_data_InBUS_InHigh;
-input	 [COMPARATOR_DATAWIDTH-1:0] CC_COMPARATOR_data_InBUS_2_InHigh;
+output	reg CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow;
+input 	[BOTTOMSIDECOMPARATOR_DATAWIDTH-1:0] CC_BOTTOMSIDECOMPARATOR_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
 //=======================================================
 //  Structural coding
 //=======================================================
-always @(*)
+always @(CC_BOTTOMSIDECOMPARATOR_data_InBUS)
 begin
-    if( CC_COMPARATOR_data_InBUS_InHigh & CC_COMPARATOR_data_InBUS_2_InHigh == 4b'00000000)
-        CC_COMPARATOR_OutLow = 1'b0;
-    else 
-        CC_COMPARATOR_OutLow = 1'b1;
+	if( CC_BOTTOMSIDECOMPARATOR_data_InBUS == 8'b00000000)
+		CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow = 1'b1;
+	else 
+		CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow = 1'b0;
 end
 
 endmodule
-
 
