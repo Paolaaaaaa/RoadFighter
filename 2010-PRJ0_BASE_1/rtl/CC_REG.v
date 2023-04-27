@@ -22,7 +22,9 @@ module CC_REG #(parameter CC_REG_WIDTH=4)(
 //////////// OUTPUTS //////////
 	CC_REG_z_OutBus,
 //////////// INPUTS //////////
-	CC_REG_data_InBUS
+	CC_REG_data_InBUS,
+	CC_RegGENERAL_RESET_InHigh
+	
 );
 //=======================================================
 //  PARAMETER declarations
@@ -33,6 +35,7 @@ module CC_REG #(parameter CC_REG_WIDTH=4)(
 //=======================================================
 output	[CC_REG_WIDTH-1:0]  CC_REG_z_OutBus;
 input 	[CC_REG_WIDTH-1:0] CC_REG_data_InBUS;
+input		SC_RegGENERAL_RESET_InHigh;
 //=======================================================Q/
 ///A=======================================================
 //  REG/WIRE declarations
@@ -43,8 +46,10 @@ input 	[CC_REG_WIDTH-1:0] CC_REG_data_InBUS;
 //=======================================================
 always @(CC_MUX41_data_InBUS)
 begin
-  
-      CC_REG_z_OutBus = CC_REG_data_InBUS;
+	if (CC_RegGENERAL_RESET_InHigh == 1)
+		CC_REG_z_OutBus = 0;
+	else 
+		CC_REG_z_OutBus = CC_REG_data_InBUS;
 
 end
 
