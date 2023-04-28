@@ -59,7 +59,7 @@ input 	SC_STATEMACHINE_START_INLow;
 
 always @(SC_STATEMACHINE_CONTADOR or CC_MUX41_select_InBUS)
 begin
-   if( SC_STATEMACHINE_CONTADOR  < 4)// cuando el select está en 0 la pantalla está en 0s
+   if( SC_STATEMACHINE_CONTADOR  == 1)// cuando el select está en 0 la pantalla está en 0s
       
 	SC_STATEMACHINE_SIGNAL_OUT_1 = 0;
 	SC_STATEMACHINE_SIGNAL_OUT_2 = 0;
@@ -68,7 +68,7 @@ begin
 	SC_STATEMACHINE_SIGNAL_OUT_5= 0;
 	SC_STATEMACHINE_SIGNAL_OUT_6= 0;
 	SC_STATEMACHINE_SIGNAL_OUT_7= 0;
-   else if( SC_STATEMACHINE_RESET_INHigh == 1)/// cuando reset == 1 pantalla en 0 unos
+   else if( SC_STATEMACHINE_RESET_INHigh == 1 && SC_STATEMACHINE_CONTADOR  == 1)/// cuando reset == 1 pantalla en 0 unos
       	SC_STATEMACHINE_SIGNAL_OUT_1 =0;
 	SC_STATEMACHINE_SIGNAL_OUT_2 = 0;
 	SC_STATEMACHINE_SIGNAL_OUT_3= 0;
@@ -76,7 +76,7 @@ begin
 	SC_STATEMACHINE_SIGNAL_OUT_5= 0;
 	SC_STATEMACHINE_SIGNAL_OUT_6= 0;
 	SC_STATEMACHINE_SIGNAL_OUT_7= 0;
-   else if( SC_STATEMACHINE_CONTADOR > 4)// está en 2 saca el random
+   else if( SC_STATEMACHINE_CONTADOR && SC_STATEMACHINE_CONTADOR  == 1)// está en 2 saca el random
     SC_STATEMACHINE_SIGNAL_OUT_1 = 2;
 	SC_STATEMACHINE_SIGNAL_OUT_2 = 2;
 	SC_STATEMACHINE_SIGNAL_OUT_3= 2;
