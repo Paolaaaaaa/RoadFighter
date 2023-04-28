@@ -123,11 +123,17 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_3_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_4_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_5_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_6_cwire;
-wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_7_cwire;
+
 		//RANDOM
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RANDOM_cwire;
 		// State Machine (General)
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_2_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_3_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_4_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_5_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_6_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_7_cwire;
 		// State Machine (Palyer)
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SMP_cwire;
 		// RegShifeter
@@ -160,7 +166,13 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_REG_14_cwire;
 		//RANDOM
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RANDOM_2_cwire;
 		// State Machine (General)
-wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_2_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_7_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_8_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_9_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_10_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_11_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_12_cwire;
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_13_cwire;
 		// State Machine (Palyer)
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SMP_2_cwire;
 		// RegShifeter
@@ -202,20 +214,29 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u2 (
 								//##########PLAYER 1##########
 								//############################
 								
-/*		//STATE MACHINES
+		//STATE MACHINES
 SC_SM_u0 (
-//máquina de estados de registros
+máquina de estados de registros
 .SC_SM_OutBUS(BB_SYSTEM_SM_cwire),
-.SC_SM_COUNTER_LV(BB_SYSTEM_LV_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_1_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_2_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_3_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_4_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_5_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_6_cwire),
+.SC_SM_OutBUS(BB_SYSTEM_SM_7_cwire),
 .SC_SM_COUNTER_TIME(BB_SYSTEM_load_cwire),
-.SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh_cwire)
+.SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh_cwire),
+.SC_SM_starButton_InLow(BB_SYSTEM_starBUtton_InLow_cwire)
 );
 SC_SMP_u0 (
-//máquina de estados del jugador
+máquina de estados del jugador
 .SC_SMP_OutBUS(BB_SYSTEM_SMP_cwire),
+.SC_SMP_CLOCK_50(BB_SYSTEM_CLOCK_50_cwire),
 .SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
-.SC_SMP_BB_SYSTEM_REG_6_cwire()/////////////////////
-);*/
+.SC_SMP_leftButton_InLow(BB_SYSTEM_leftButton_InLow_cwire),
+.SC_SMP_rightButton_InLow(BB_SYSTEM_rightButton_InLow_cwire)
+);
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u0 (
 //contador de tiempo que define, en función del nivel, las señales de carga
@@ -353,7 +374,7 @@ CC_COMPARATOR_u0(
 									
 		//STATE MACHINES
 		
-/*
+
 SC_SM_u1 (
 //máquina de estados de registros
 .SC_SM_OutBUS(BB_SYSTEM_SM_2_cwire),
@@ -362,11 +383,12 @@ SC_SM_u1 (
 .SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
 );
 SC_SMP_u1 (
-//máquina de estados del jugador
-.SC_SMP_OutBUS(BB_SYSTEM_SMP_2_cwire),
+máquina de estados del jugador
+.SC_SMP_OutBUS(BB_SYSTEM_SMP_cwire),
+.SC_SMP_CLOCK_50(BB_SYSTEM_CLOCK_50_cwire),
 .SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
-.SC_SMP_BB_SYSTEM_REG_13_cwire/////////////////////
-);*/
+.SC_SMP_leftButton_InLow(BB_SYSTEM_leftButton_2_InLow_cwire),
+.SC_SMP_rightButton_InLow(BB_SYSTEM_rightButton_2_InLow_cwire)
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u1 (
 //contador de tiempo que define, en función del nivel, las señales de carga

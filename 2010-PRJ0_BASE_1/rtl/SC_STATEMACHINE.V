@@ -22,6 +22,7 @@ module SC_STATEMACHINE (
 	//////////// OUTPUTS //////////
 	
 	SC_STATEMACHINE_SIGNAL_OUT,
+	
 	//////////// INPUTS //////////
 	SC_STATEMACHINE_INBUS_TIME,
 	SC_STATEMACHINE_RESET_INHigh,
