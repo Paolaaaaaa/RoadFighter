@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegSHIFTER #(parameter RegSHIFTER_DATAWIDTH=4)(
+module SC_RegSHIFTER_ #(parameter RegSHIFTER_DATAWIDTH=4)(
 	//////////// OUTPUTS //////////
 	SC_RegSHIFTER_data_OutBUS,
 	//////////// INPUTS //////////

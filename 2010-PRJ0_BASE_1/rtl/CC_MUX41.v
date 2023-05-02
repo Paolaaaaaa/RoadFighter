@@ -18,7 +18,7 @@
 ///Q=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
+module CC_MUX41 #(parameter MUX41_SELECTWIDTH=8,parameter MUX41_DATAWIDTH=8)(
 //////////// OUTPUTS //////////
 	CC_MUX41_z_OutBus,
 //////////// INPUTS //////////
@@ -33,9 +33,9 @@ module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output	[MUX41_SELECTWIDTH-1:0]  CC_MUX41_z_OutBus;
+output	[MUX41_DATAWIDTH-1:0]  CC_MUX41_z_OutBus;
 input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_select_InBUS;
-input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
+input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_data_InBUS;
 
 
 //=======================================================Q/
@@ -46,14 +46,18 @@ input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
 //=======================================================
 //  Structural coding
 //=======================================================
-always @(CC_MUX41_data_InBUS or CC_MUX41_select_InBUS)
+always @( CC_MUX41_select_InBUS)
 begin
    if( CC_MUX41_select_InBUS == 0)// cuando el select está en 0 la pantalla está en 0s
-      CC_MUX41_z_Out =0;
+      CC_MUX41_z_OutBus =0;
    else if( CC_MUX41_select_InBUS == 1)/// cuando el select está en 1 la pantalla está en 1s
-      CC_MUX41_z_Out = 15;
+	begin
+      CC_MUX41_z_OutBus =1;
+	end
    else if( CC_MUX41_select_InBUS == 2)// está en 2 saca el random
-      CC_MUX41_z_Out = CC_MUX41_data_InBUS;
+	begin
+      CC_MUX41_z_OutBus = 1;
+	end
 
 end
 

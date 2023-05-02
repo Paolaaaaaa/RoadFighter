@@ -65,7 +65,9 @@ output 		BB_SYSTEM_startButton_Out;
 output 		BB_SYSTEM_leftButton_Out;
 output 		BB_SYSTEM_rightButton_Out;
 
-
+// Hay 8 salidas = cada fila de la matriz cada uno de 1 byte// 8 bits
+// salida contador 
+//los input si están correctos
 input			BB_SYSTEM_CLOCK_50;
 input			BB_SYSTEM_RESET_InHigh;
 input			BB_SYSTEM_startButton_InLow; 
@@ -133,7 +135,6 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_3_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_4_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_5_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_6_cwire;
-wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_7_cwire;
 		// State Machine (Palyer)
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SMP_cwire;
 		// RegShifeter
@@ -216,7 +217,7 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u2 (
 								
 		//STATE MACHINES
 SC_SM_u0 (
-máquina de estados de registros
+//máquina de estados de registros
 .SC_SM_OutBUS(BB_SYSTEM_SM_cwire),
 .SC_SM_OutBUS(BB_SYSTEM_SM_1_cwire),
 .SC_SM_OutBUS(BB_SYSTEM_SM_2_cwire),
@@ -230,7 +231,7 @@ máquina de estados de registros
 .SC_SM_starButton_InLow(BB_SYSTEM_starBUtton_InLow_cwire)
 );
 SC_SMP_u0 (
-máquina de estados del jugador
+//máquina de estados del jugador
 .SC_SMP_OutBUS(BB_SYSTEM_SMP_cwire),
 .SC_SMP_CLOCK_50(BB_SYSTEM_CLOCK_50_cwire),
 .SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
@@ -383,12 +384,12 @@ SC_SM_u1 (
 .SC_SM_RESET_InHigh(BB_SYSTEM_RESET_InHigh)
 );
 SC_SMP_u1 (
-máquina de estados del jugador
+//máquina de estados del jugador
 .SC_SMP_OutBUS(BB_SYSTEM_SMP_cwire),
 .SC_SMP_CLOCK_50(BB_SYSTEM_CLOCK_50_cwire),
 .SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
 .SC_SMP_leftButton_InLow(BB_SYSTEM_leftButton_2_InLow_cwire),
-.SC_SMP_rightButton_InLow(BB_SYSTEM_rightButton_2_InLow_cwire)
+.SC_SMP_rightButton_InLow(BB_SYSTEM_rightButton_2_InLow_cwire));
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u1 (
 //contador de tiempo que define, en función del nivel, las señales de carga

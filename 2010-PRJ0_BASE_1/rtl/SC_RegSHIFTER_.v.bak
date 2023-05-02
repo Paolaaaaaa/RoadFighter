@@ -18,13 +18,14 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=4)(
+module SC_RegSHIFTER #(parameter RegSHIFTER_DATAWIDTH=4)(
 	//////////// OUTPUTS //////////
-	SC_RegGENERAL_data_OutBUS,
+	SC_RegSHIFTER_data_OutBUS,
 	//////////// INPUTS //////////
-	SC_RegGENERAL_CLOCK_50,
-	SC_RegGENERAL_RESET_InHigh, 
-	SC_RegGENERAL_InBUS_InHigh
+	SC_RegSHIFTER_REG_In,
+	SC_RegSHIFTER_STATEMACHINE_In,
+	SC_RegSHIFTER_CLOCK_50,
+	SC_RegSHIFTER_bits
 );
 //=======================================================
 //  PARAMETER declarations
@@ -33,42 +34,34 @@ module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[RegGENERAL_DATAWIDTH-1:0]	SC_RegGENERAL_data_OutBUS;
-input		SC_RegGENERAL_CLOCK_50;
-input		SC_RegGENERAL_RESET_InHigh;
-input		SC_RegGENERAL_InBUS_InHigh;	
-
-
+output	[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_OutBUS;
+input		SC_RegSHIFTER_REG_In;
+input		SC_RegSHIFTER_STATEMACHINE_In;
+input		SC_RegSHIFTER_CLOCK_50;
+input		SC_RegSHIFTER_bits[3:0];
+//input		[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Register;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Signal;
-reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Data;
+//reg [RegSHIFTER_DATAWIDTH-1:0] RegSHIFTER_Register;
+//reg [RegSHIFTER_DATAWIDTH-1:0] RegSHIFTER_Signal;
+//wire RegXOR_Signal;
+//reg SC_RegSHIFTER_resultado [3:0]
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
+
 begin
-	if (SC_RegGENERAL_InBUS_InHigh > 4'b0000)
-		RegGENERAL_Register = SC_RegGENERAL_Data+4'b0001;
-	else
-		RegGENERAL_Signal = RegGENERAL_Register;
-	end	
-//STATE REGISTER: SEQUENTIAL
-always @(posedge SC_RegGENERAL_CLOCK_50, posedge SC_RegGENERAL_RESET_InHigh)
-begin
-	if (SC_RegGENERAL_RESET_InHigh == 1'b1)
-		RegGENERAL_Register <= 0;
-	else
-		RegGENERAL_Register <= RegGENERAL_Signal;
+	if (SC_RegSHIFTER_STATEMACHINE_In) //Desplazar a la izquierda
+    SC_RegSHIFTER_data_OutBUS <= {SC_RegSHIFTER_REG_In[2:0], 1'b0};
+  else //Desplazar a la derecha
+    SC_RegSHIFTER_data_OutBUS <= {1'b0, SC_RegSHIFTER_REG_In[2:1]};
 end
 //=======================================================
 //  Outputs
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
-assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
-assign SC_RegGENERAL_Data = 4'b0000;
 
 endmodule

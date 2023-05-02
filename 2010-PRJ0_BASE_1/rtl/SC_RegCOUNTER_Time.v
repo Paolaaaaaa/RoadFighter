@@ -33,14 +33,14 @@ module SC_RegGENERAL_Time #(parameter RegGENERAL_DATAWIDTH=8)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[upSPEEDCOUNTER_DATAWIDTH-1:0]	SC_RegGENERAL_Time_data_OutBUS;
+output		[RegGENERAL_DATAWIDTH-1:0]	SC_RegGENERAL_Time_data_OutBUS;
 input		SC_RegGENERAL_Time_CLOCK_50;
 input		SC_RegGENERAL_Time_RESET_InHigh;
 input		SC_upSPEEDCOUNTER_upcount_InLow;
 //=======================================================
 //  REG/WIRE declarations//=======================================================
-reg [upSPEEDCOUNTER_DATAWIDTH-1:0] upSPEEDCOUNTER_Register;
-reg [upSPEEDCOUNTER_DATAWIDTH-1:0] upSPEEDCOUNTER_Signal;
+reg [RegGENERAL_DATAWIDTH-1:0] upSPEEDCOUNTER_Register;
+reg [RegGENERAL_DATAWIDTH-1:0] upSPEEDCOUNTER_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
