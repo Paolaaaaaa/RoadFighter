@@ -35,23 +35,26 @@ module CC_REG #(parameter CC_REG_WIDTH=4)(
 //=======================================================
 output	[CC_REG_WIDTH-1:0]  CC_REG_z_OutBus;
 input 	[CC_REG_WIDTH-1:0] CC_REG_data_InBUS;
-input		SC_RegGENERAL_RESET_InHigh;
+input		CC_RegGENERAL_RESET_InHigh;
 //=======================================================Q/
 ///A=======================================================
 //  REG/WIRE declarations
 //=======================================================
 
+reg 	[CC_REG_WIDTH-1:0] reg_you;
 //=======================================================
 //  Structural coding
 //=======================================================
-always @(CC_MUX41_data_InBUS)
+always @(*)
 begin
 	if (CC_RegGENERAL_RESET_InHigh == 1)
-		CC_REG_z_OutBus = 0;
+		 reg_you = 0;
 	else 
-		CC_REG_z_OutBus = CC_REG_data_InBUS;
+		reg_you = CC_REG_data_InBUS;
 
 end
+assign CC_REG_z_OutBus = reg_you;
+
 
 endmodule
 //=======================================================A/
