@@ -22,7 +22,8 @@ module CC_BOTTOMSIDECOMPARATOR #(parameter BOTTOMSIDECOMPARATOR_DATAWIDTH=8)(
 //////////// OUTPUTS //////////
 	CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow,
 //////////// INPUTS //////////
-	CC_BOTTOMSIDECOMPARATOR_data_InBUS
+	CC_BOTTOMSIDECOMPARATOR_data_Reg_InBUS,
+	CC_BOTTOMSIDECOMPARATOR_data_Play_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -32,16 +33,18 @@ module CC_BOTTOMSIDECOMPARATOR #(parameter BOTTOMSIDECOMPARATOR_DATAWIDTH=8)(
 //  PORT declarations
 //=======================================================
 output	reg CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow;
-input 	[BOTTOMSIDECOMPARATOR_DATAWIDTH-1:0] CC_BOTTOMSIDECOMPARATOR_data_InBUS;
+input 	[BOTTOMSIDECOMPARATOR_DATAWIDTH-1:0] CC_BOTTOMSIDECOMPARATOR_data_Reg_InBUS;
+input 	[BOTTOMSIDECOMPARATOR_DATAWIDTH-1:0] CC_BOTTOMSIDECOMPARATOR_data_Play_InBUS;
+
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
 //=======================================================
 //  Structural coding
 //=======================================================
-always @(CC_BOTTOMSIDECOMPARATOR_data_InBUS)
+always @(*)
 begin
-	if( CC_BOTTOMSIDECOMPARATOR_data_InBUS == 8'b00000000)
+	if( CC_BOTTOMSIDECOMPARATOR_data_Reg_InBUS == CC_BOTTOMSIDECOMPARATOR_data_Play_InBUS)
 		CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow = 1'b1;
 	else 
 		CC_BOTTOMSIDECOMPARATOR_bottomside_OutLow = 1'b0;

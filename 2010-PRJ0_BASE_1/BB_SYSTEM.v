@@ -139,6 +139,8 @@ wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SM_6_cwire;
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_SMP_cwire;
 		// RegShifeter
 wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_RegSHIFTER_cwire;
+		//COMPARATOR
+wire [DATAWIDTH_BUS-1:0] BB_SYSTEM_Comparator_cwire;
 
 	//### P2 ###
 		//counters
@@ -236,7 +238,8 @@ SC_SMP_u0 (
 .SC_SMP_CLOCK_50(BB_SYSTEM_CLOCK_50_cwire),
 .SC_SMP_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
 .SC_SMP_leftButton_InLow(BB_SYSTEM_leftButton_InLow_cwire),
-.SC_SMP_rightButton_InLow(BB_SYSTEM_rightButton_InLow_cwire)
+.SC_SMP_rightButton_InLow(BB_SYSTEM_rightButton_InLow_cwire),
+.SC_STATEMACHINEPOINT_bottomsidecomparator_InLow(BB_SYSTEM_COMPARATOR_cwire)
 );
 		//COUNTERS##############
 SC_RegCOUNTER_Time_u0 (
@@ -364,8 +367,8 @@ SC_RegRANDOM_u0 (
 CC_COMPARATOR_u0(
 //Comparador para la prueba de choque
 .CC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_cwire),
-.SC_COPARATOR_data_InBUS_InHigh(BB_SYSTEM_REG_6_cwire),
-.SC_COMPARATOR_data_InBUS_InHigh_2(BB_SYSTEM_RegSHIFTER_cwire)
+.CC_BOTTOMSIDECOMPARATOR_data_Reg_InBUS(BB_SYSTEM_REG_6_cwire),
+.CC_BOTTOMSIDECOMPARATOR_data_Play_InBUS(BB_SYSTEM_RegSHIFTER_cwire)
 );
 
 
@@ -515,8 +518,8 @@ SC_RegRANDOM_u1 (
 CC_COMPARATOR_u1(
 //Comparador para la prueba de choque
 .CC_COMPARATOR_data_OutBUS(BB_SYSTEM_COMPARATOR_2_cwire),
-.SC_COPARATOR_data_InBUS_InHigh(BB_SYSTEM_REG_13_cwire),
-.SC_COMPARATOR_data_InBUS_InHigh_2(BB_SYSTEM_RegSHIFTER_2_cwire)
+.CC_BOTTOMSIDECOMPARATOR_data_Reg_InBUS(BB_SYSTEM_REG_13_cwire),
+.CC_BOTTOMSIDECOMPARATOR_data_Play_InBUS(BB_SYSTEM_RegSHIFTER_2_cwire)
 );
 //######################################################################
 //#	TO LED MATRIZ: VISUALIZATION

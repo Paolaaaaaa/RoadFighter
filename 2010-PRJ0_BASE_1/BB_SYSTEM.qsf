@@ -386,6 +386,11 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 
 
+
+
+
+set_global_assignment -name VERILOG_FILE rtl/CC_BOTTOMSIDECOMPARATOR.v
+set_global_assignment -name VERILOG_FILE rtl/SC_STATEMACHINEPOINT.v
 set_global_assignment -name SDC_FILE BB_SYSTEM.sdc
 set_global_assignment -name VERILOG_FILE rtl/shift_reg_start_done.v
 set_global_assignment -name VERILOG_FILE rtl/max7219_ctrl.v
@@ -394,11 +399,8 @@ set_global_assignment -name VERILOG_FILE BB_SYSTEM.v
 set_global_assignment -name SOURCE_FILE db/BB_SYSTEM.cmp.rdb
 set_global_assignment -name VERILOG_FILE rtl/SC_RegCOUNTER_Time.v
 set_global_assignment -name VERILOG_FILE rtl/SC_RegCOUNTER_LV.v
-
-
 set_global_assignment -name VERILOG_FILE rtl/CC_MUX41.v
 set_global_assignment -name VERILOG_FILE rtl/CC_REG.v
-
 set_global_assignment -name VERILOG_FILE rtl/SC_STATEMACHINE.V
 set_global_assignment -name VERILOG_FILE rtl/CC_SPEEDCOMPARATOR.v
 set_global_assignment -name VERILOG_FILE rtl/SC_RANDOM.v
