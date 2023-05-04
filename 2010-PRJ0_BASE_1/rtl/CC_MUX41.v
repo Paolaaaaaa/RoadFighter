@@ -33,7 +33,7 @@ module CC_MUX41 #(parameter MUX41_SELECTWIDTH=8,parameter MUX41_DATAWIDTH=8)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output	[MUX41_DATAWIDTH-1:0]  CC_MUX41_z_OutBus;
+output	[MUX41_DATAWIDTH-1:0] CC_MUX41_z_OutBus;
 
 input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_select_InBUS;
 input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_data_InBUS;
