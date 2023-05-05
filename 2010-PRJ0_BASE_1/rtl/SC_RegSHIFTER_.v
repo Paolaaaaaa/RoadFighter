@@ -19,13 +19,14 @@
 //  MODULE Definition
 //=======================================================
 module SC_RegSHIFTER_ #(parameter RegSHIFTER_DATAWIDTH=4)(
-	//////////// OUTPUTS //////////
-	SC_RegSHIFTER_data_OutBUS,
-	//////////// INPUTS //////////
-	SC_RegSHIFTER_REG_In,
-	SC_RegSHIFTER_STATEMACHINE_In,
-	SC_RegSHIFTER_CLOCK_50,
-	SC_RegSHIFTER_bits
+    //////////// OUTPUTS //////////
+    SC_RegSHIFTER_data_OutBUS,
+    //////////// INPUTS //////////
+    SC_RegSHIFTER_REG_In,
+    SC_RegSHIFTER_STATEMACHINE_In,
+    SC_RegSHIFTER_RESET_InHigh,
+    SC_RegSHIFTER_startButton_InLow,
+    SC_RegSHIFTER_CLOCK_50
 );
 //=======================================================
 //  PARAMETER declarations
@@ -34,34 +35,43 @@ module SC_RegSHIFTER_ #(parameter RegSHIFTER_DATAWIDTH=4)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output	[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_OutBUS;
-input		SC_RegSHIFTER_REG_In;
-input		SC_RegSHIFTER_STATEMACHINE_In;
-input		SC_RegSHIFTER_CLOCK_50;
-input		SC_RegSHIFTER_bits[3:0];
-//input		[RegSHIFTER_DATAWIDTH-1:0]	SC_RegSHIFTER_data_InBUS;
+    output reg[RegSHIFTER_DATAWIDTH-1:0] SC_RegSHIFTER_data_OutBUS;
+    input [RegSHIFTER_DATAWIDTH-1:0] SC_RegSHIFTER_REG_In;
+    input SC_RegSHIFTER_STATEMACHINE_In;
+    input SC_RegSHIFTER_CLOCK_50;
+    input SC_RegSHIFTER_RESET_InHigh;
+    input SC_RegSHIFTER_startButton_InLow;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-//reg [RegSHIFTER_DATAWIDTH-1:0] RegSHIFTER_Register;
-//reg [RegSHIFTER_DATAWIDTH-1:0] RegSHIFTER_Signal;
-//wire RegXOR_Signal;
-//reg SC_RegSHIFTER_resultado [3:0]
+    reg [RegSHIFTER_DATAWIDTH-1:0] shift_reg; // Registro para almacenar el valor de entrada
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
-always @(*)
-
+always @(*) 
 begin
-	if (SC_RegSHIFTER_STATEMACHINE_In) //Desplazar a la izquierda
-    SC_RegSHIFTER_data_OutBUS <= {SC_RegSHIFTER_REG_In[2:0], 1'b0};
-  else //Desplazar a la derecha
-    SC_RegSHIFTER_data_OutBUS <= {1'b0, SC_RegSHIFTER_REG_In[2:1]};
-end
+        if (SC_RegSHIFTER_STATEMACHINE_In == 0)
+            shift_reg = SC_RegSHIFTER_REG_In << 1'b1;   
+        else 
+            shift_reg = SC_RegSHIFTER_REG_In >> 1'b1;   
+
+end 
 //=======================================================
 //  Outputs
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
+always @(*)
+begin
+    SC_RegSHIFTER_data_OutBUS = shift_reg;
+end
 
+//STATE REGISTER: SEQUENTIAL
+always @(posedge SC_RegSHIFTER_CLOCK_50, posedge SC_RegSHIFTER_RESET_InHigh)
+begin
+    if (SC_RegSHIFTER_RESET_InHigh == 1'b1)
+        shift_reg <= 0;
+    else
+        shift_reg <= SC_RegSHIFTER_REG_In;
+end
 endmodule

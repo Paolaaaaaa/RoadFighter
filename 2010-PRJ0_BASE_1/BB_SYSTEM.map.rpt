@@ -1,0 +1,292 @@
+Analysis & Synthesis report for BB_SYSTEM
+Thu May 04 21:15:38 2023
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Thu May 04 21:15:38 2023           ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; BB_SYSTEM                                   ;
+; Top-level Entity Name              ; BB_SYSTEM                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; BB_SYSTEM          ; BB_SYSTEM          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; 4                  ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Thu May 04 21:15:28 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_bottomsidecomparator.v
+    Info (12023): Found entity 1: CC_BOTTOMSIDECOMPARATOR File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_BOTTOMSIDECOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinepoint.v
+    Info (12023): Found entity 1: SC_STATEMACHINEPOINT File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINEPOINT.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/shift_reg_start_done.v
+    Info (12023): Found entity 1: shift_reg_start_done File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/max7219_ctrl.v
+    Info (12023): Found entity 1: matrix_ctrl File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_debounce1.v
+    Info (12023): Found entity 1: SC_DEBOUNCE1 File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
+    Info (12023): Found entity 1: BB_SYSTEM File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regcounter_time.v
+    Info (12023): Found entity 1: SC_RegGENERAL_Time File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regcounter_lv.v
+    Info (12023): Found entity 1: SC_RegGENERAL_ File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_mux41.v
+    Info (12023): Found entity 1: CC_MUX41 File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_MUX41.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_reg.v
+    Info (12023): Found entity 1: CC_REG File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_REG.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachine.v
+    Info (12023): Found entity 1: SC_STATEMACHINE File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE.V Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_speedcomparator.v
+    Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_SPEEDCOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_random.v
+    Info (12023): Found entity 1: SC_RegSHIFTER File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RANDOM.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regshifter_.v
+    Info (12023): Found entity 1: SC_RegSHIFTER_ File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegSHIFTER_.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(224): created implicit net for "BB_SYSTEM_SM_1_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 224
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(232): created implicit net for "BB_SYSTEM_RESET_InHigh_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 232
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(233): created implicit net for "BB_SYSTEM_starBUtton_InLow_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 233
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(238): created implicit net for "BB_SYSTEM_CLOCK_50_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 238
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(242): created implicit net for "BB_SYSTEM_COMPARATOR_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 242
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(248): created implicit net for "BB_SYSTEM_CLOCK50" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 248
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(257): created implicit net for "BB_SYSTEM_CLCOK_50" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 257
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(258): created implicit net for "BB_SYSTEM_RESET_InHIgh" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 258
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(273): created implicit net for "BB_SYTEM_REG_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 273
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(284): created implicit net for "BB_SYTEM_SM_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 284
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(325): created implicit net for "BB_SYTEM_MUX_2_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 325
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(349): created implicit net for "BB_SYSTEM_REG_7_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 349
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(355): created implicit net for "BB_SYSTEM_RegSHIFTER" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 355
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(394): created implicit net for "BB_SYSTEM_leftButton_2_InLow_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 394
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(395): created implicit net for "BB_SYSTEM_rightButton_2_InLow_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 395
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(410): created implicit net for "BB_SYSTEM_RESET_InHIgh_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 410
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(419): created implicit net for "BB_SYSTEM_RANDOM_Out_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 419
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(520): created implicit net for "BB_SYSTEM_COMPARATOR_2_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 520
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(564): created implicit net for "BB_SYSTEM_TEST0" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 564
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(565): created implicit net for "BB_SYSTEM_TEST1" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 565
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(566): created implicit net for "BB_SYSTEM_TEST2" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 566
+Warning (10236): Verilog HDL Implicit Net warning at SC_RegCOUNTER_LV.v(72): created implicit net for "SC_RegGENERAL_Data" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 72
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(234): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(243): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 243
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(252): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 252
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(260): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 260
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(268): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 268
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(274): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 274
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(280): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 280
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(286): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 286
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(292): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 292
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(298): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 298
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(304): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 304
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(310): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 310
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(316): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 316
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(321): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 321
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(326): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 326
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(331): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 331
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(336): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 336
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(341): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 341
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(346): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 346
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(351): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 351
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(358): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 358
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(365): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 365
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(372): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 372
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(388): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 388
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(395): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 395
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(404): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 404
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(412): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 412
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(420): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 420
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(426): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 426
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(432): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 432
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(438): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 438
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(444): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 444
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(450): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 450
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(456): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 456
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(462): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 462
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(468): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 468
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(473): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 473
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(478): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 478
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(483): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 483
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(488): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 488
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(493): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 493
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(498): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 498
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(503): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 503
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(509): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 509
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(516): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 516
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(523): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 523
+Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(564): object "BB_SYSTEM_TEST0" assigned a value but never read File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 564
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(565): object "BB_SYSTEM_TEST1" assigned a value but never read File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 565
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(566): object "BB_SYSTEM_TEST2" assigned a value but never read File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 566
+Error (10068): Port "SC_SM_OutBUS[0]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[1]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[2]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[3]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[4]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[5]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[6]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[7]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (12153): Can't elaborate top-level user hierarchy
+Info (144001): Generated suppressed messages file E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 71 warnings
+    Error: Peak virtual memory: 4706 megabytes
+    Error: Processing ended: Thu May 04 21:15:39 2023
+    Error: Elapsed time: 00:00:11
+    Error: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg.
+
+
