@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu May 04 21:15:38 2023
+Fri May 05 08:13:28 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu May 04 21:15:38 2023           ;
+; Analysis & Synthesis Status        ; Failed - Fri May 05 08:13:28 2023           ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -147,7 +147,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -164,129 +164,130 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu May 04 21:15:28 2023
+    Info: Processing started: Fri May 05 08:13:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_bottomsidecomparator.v
-    Info (12023): Found entity 1: CC_BOTTOMSIDECOMPARATOR File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_BOTTOMSIDECOMPARATOR.v Line: 21
+    Info (12023): Found entity 1: CC_BOTTOMSIDECOMPARATOR File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_BOTTOMSIDECOMPARATOR.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinepoint.v
-    Info (12023): Found entity 1: SC_STATEMACHINEPOINT File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINEPOINT.v Line: 21
+    Info (12023): Found entity 1: SC_STATEMACHINEPOINT File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINEPOINT.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/shift_reg_start_done.v
-    Info (12023): Found entity 1: shift_reg_start_done File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 34
+    Info (12023): Found entity 1: shift_reg_start_done File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/max7219_ctrl.v
-    Info (12023): Found entity 1: matrix_ctrl File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 18
+    Info (12023): Found entity 1: matrix_ctrl File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_debounce1.v
-    Info (12023): Found entity 1: SC_DEBOUNCE1 File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 44
+    Info (12023): Found entity 1: SC_DEBOUNCE1 File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
-    Info (12023): Found entity 1: BB_SYSTEM File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 21
+    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regcounter_time.v
-    Info (12023): Found entity 1: SC_RegGENERAL_Time File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 21
+    Info (12023): Found entity 1: SC_RegGENERAL_Time File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_Time.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regcounter_lv.v
-    Info (12023): Found entity 1: SC_RegGENERAL_ File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 21
+    Info (12023): Found entity 1: SC_RegGENERAL_ File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_mux41.v
-    Info (12023): Found entity 1: CC_MUX41 File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_MUX41.v Line: 21
+    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_MUX41.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_reg.v
-    Info (12023): Found entity 1: CC_REG File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_REG.v Line: 21
+    Info (12023): Found entity 1: CC_REG File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_REG.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachine.v
-    Info (12023): Found entity 1: SC_STATEMACHINE File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE.V Line: 21
+    Info (12023): Found entity 1: SC_STATEMACHINE File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE.V Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_speedcomparator.v
-    Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_SPEEDCOMPARATOR.v Line: 21
+    Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_SPEEDCOMPARATOR.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_random.v
-    Info (12023): Found entity 1: SC_RegSHIFTER File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RANDOM.v Line: 21
+    Info (12023): Found entity 1: SC_RegSHIFTER File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RANDOM.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regshifter_.v
-    Info (12023): Found entity 1: SC_RegSHIFTER_ File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegSHIFTER_.v Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(224): created implicit net for "BB_SYSTEM_SM_1_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 224
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(232): created implicit net for "BB_SYSTEM_RESET_InHigh_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 232
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(233): created implicit net for "BB_SYSTEM_starBUtton_InLow_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 233
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(238): created implicit net for "BB_SYSTEM_CLOCK_50_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 238
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(242): created implicit net for "BB_SYSTEM_COMPARATOR_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 242
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(248): created implicit net for "BB_SYSTEM_CLOCK50" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 248
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(257): created implicit net for "BB_SYSTEM_CLCOK_50" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 257
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(258): created implicit net for "BB_SYSTEM_RESET_InHIgh" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 258
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(273): created implicit net for "BB_SYTEM_REG_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 273
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(284): created implicit net for "BB_SYTEM_SM_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 284
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(325): created implicit net for "BB_SYTEM_MUX_2_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 325
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(349): created implicit net for "BB_SYSTEM_REG_7_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 349
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(355): created implicit net for "BB_SYSTEM_RegSHIFTER" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 355
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(394): created implicit net for "BB_SYSTEM_leftButton_2_InLow_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 394
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(395): created implicit net for "BB_SYSTEM_rightButton_2_InLow_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 395
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(410): created implicit net for "BB_SYSTEM_RESET_InHIgh_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 410
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(419): created implicit net for "BB_SYSTEM_RANDOM_Out_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 419
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(520): created implicit net for "BB_SYSTEM_COMPARATOR_2_cwire" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 520
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(564): created implicit net for "BB_SYSTEM_TEST0" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 564
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(565): created implicit net for "BB_SYSTEM_TEST1" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 565
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(566): created implicit net for "BB_SYSTEM_TEST2" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 566
-Warning (10236): Verilog HDL Implicit Net warning at SC_RegCOUNTER_LV.v(72): created implicit net for "SC_RegGENERAL_Data" File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 72
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(234): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(243): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 243
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(252): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 252
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(260): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 260
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(268): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 268
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(274): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 274
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(280): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 280
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(286): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 286
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(292): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 292
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(298): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 298
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(304): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 304
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(310): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 310
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(316): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 316
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(321): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 321
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(326): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 326
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(331): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 331
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(336): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 336
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(341): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 341
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(346): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 346
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(351): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 351
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(358): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 358
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(365): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 365
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(372): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 372
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(388): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 388
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(395): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 395
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(404): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 404
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(412): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 412
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(420): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 420
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(426): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 426
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(432): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 432
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(438): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 438
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(444): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 444
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(450): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 450
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(456): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 456
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(462): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 462
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(468): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 468
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(473): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 473
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(478): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 478
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(483): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 483
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(488): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 488
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(493): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 493
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(498): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 498
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(503): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 503
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(509): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 509
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(516): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 516
-Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(523): instance has no name File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 523
+    Info (12023): Found entity 1: SC_RegSHIFTER_ File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegSHIFTER_.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(224): created implicit net for "BB_SYSTEM_SM_1_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 224
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(232): created implicit net for "BB_SYSTEM_RESET_InHigh_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 232
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(233): created implicit net for "BB_SYSTEM_starBUtton_InLow_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 233
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(238): created implicit net for "BB_SYSTEM_CLOCK_50_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 238
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(242): created implicit net for "BB_SYSTEM_COMPARATOR_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 242
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(248): created implicit net for "BB_SYSTEM_CLOCK50" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 248
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(257): created implicit net for "BB_SYSTEM_CLCOK_50" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 257
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(258): created implicit net for "BB_SYSTEM_RESET_InHIgh" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 258
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(273): created implicit net for "BB_SYTEM_REG_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 273
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(284): created implicit net for "BB_SYTEM_SM_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 284
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(325): created implicit net for "BB_SYTEM_MUX_2_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 325
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(349): created implicit net for "BB_SYSTEM_REG_7_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 349
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(355): created implicit net for "BB_SYSTEM_RegSHIFTER" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 355
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(394): created implicit net for "BB_SYSTEM_leftButton_2_InLow_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 394
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(395): created implicit net for "BB_SYSTEM_rightButton_2_InLow_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 395
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(410): created implicit net for "BB_SYSTEM_RESET_InHIgh_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 410
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(419): created implicit net for "BB_SYSTEM_RANDOM_Out_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 419
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(520): created implicit net for "BB_SYSTEM_COMPARATOR_2_cwire" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 520
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(564): created implicit net for "BB_SYSTEM_TEST0" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 564
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(565): created implicit net for "BB_SYSTEM_TEST1" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 565
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(566): created implicit net for "BB_SYSTEM_TEST2" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 566
+Warning (10236): Verilog HDL Implicit Net warning at SC_RegCOUNTER_LV.v(72): created implicit net for "SC_RegGENERAL_Data" File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegCOUNTER_LV.v Line: 72
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(234): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(243): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 243
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(252): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 252
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(260): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 260
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(268): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 268
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(274): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 274
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(280): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 280
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(286): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 286
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(292): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 292
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(298): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 298
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(304): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 304
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(310): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 310
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(316): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 316
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(321): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 321
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(326): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 326
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(331): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 331
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(336): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 336
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(341): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 341
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(346): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 346
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(351): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 351
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(358): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 358
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(365): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 365
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(372): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 372
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(388): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 388
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(395): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 395
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(404): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 404
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(412): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 412
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(420): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 420
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(426): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 426
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(432): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 432
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(438): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 438
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(444): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 444
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(450): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 450
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(456): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 456
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(462): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 462
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(468): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 468
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(473): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 473
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(478): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 478
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(483): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 483
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(488): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 488
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(493): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 493
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(498): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 498
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(503): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 503
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(509): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 509
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(516): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 516
+Critical Warning (10846): Verilog HDL Instantiation warning at BB_SYSTEM.v(523): instance has no name File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 523
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(564): object "BB_SYSTEM_TEST0" assigned a value but never read File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 564
-Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(565): object "BB_SYSTEM_TEST1" assigned a value but never read File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 565
-Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(566): object "BB_SYSTEM_TEST2" assigned a value but never read File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 566
-Error (10068): Port "SC_SM_OutBUS[0]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[1]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[2]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[3]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[4]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[5]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[6]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
-Error (10068): Port "SC_SM_OutBUS[7]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(564): object "BB_SYSTEM_TEST0" assigned a value but never read File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 564
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(565): object "BB_SYSTEM_TEST1" assigned a value but never read File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 565
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(566): object "BB_SYSTEM_TEST2" assigned a value but never read File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 566
+Error (10068): Port "SC_SM_OutBUS[0]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[1]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[2]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[3]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[4]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[5]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[6]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
+Error (10068): Port "SC_SM_OutBUS[7]" on instance " comb_6" at BB_SYSTEM.v(234) has multiple connections File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
 Error (12153): Can't elaborate top-level user hierarchy
-Info (144001): Generated suppressed messages file E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 71 warnings
-    Error: Peak virtual memory: 4706 megabytes
-    Error: Processing ended: Thu May 04 21:15:39 2023
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:28
+Info (144001): Generated suppressed messages file C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 72 warnings
+    Error: Peak virtual memory: 4704 megabytes
+    Error: Processing ended: Fri May 05 08:13:29 2023
+    Error: Elapsed time: 00:00:23
+    Error: Total CPU time (on all processors): 00:00:44
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in E:/Documents/GitHub/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg.
+The suppressed messages can be found in C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg.
 
 
