@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Fri May 05 10:55:31 2023
+Fri May 05 12:08:03 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri May 05 10:55:31 2023           ;
+; Analysis & Synthesis Status        ; Failed - Fri May 05 12:08:03 2023           ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -164,7 +164,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri May 05 10:55:21 2023
+    Info: Processing started: Fri May 05 12:07:50 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -188,8 +188,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_
     Info (12023): Found entity 1: CC_MUX41 File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_MUX41.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_reg.v
     Info (12023): Found entity 1: CC_REG File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_REG.v Line: 21
-Error (10170): Verilog HDL syntax error at SC_STATEMACHINE.V(142) near text: "begin";  expecting "endmodule". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE.V Line: 142
-Error (10112): Ignored design unit "SC_STATEMACHINE" at SC_STATEMACHINE.V(21) due to previous errors File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE.V Line: 21
+Error (10170): Verilog HDL syntax error at SC_STATEMACHINE.V(136) near text: "begin";  expecting a description. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE.V Line: 136
 Info (12021): Found 0 design units, including 0 entities, in source file rtl/sc_statemachine.v
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_speedcomparator.v
     Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/CC_SPEEDCOMPARATOR.v Line: 21
@@ -198,11 +197,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regshifter_.v
     Info (12023): Found entity 1: SC_RegSHIFTER_ File: C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/rtl/SC_RegSHIFTER_.v Line: 21
 Info (144001): Generated suppressed messages file C:/Users/Microsoft Windows 10.DESKTOP-8RBDR0M/OneDrive - Universidad de los Andes/IELE/Sitemas Electrónicos digitales/Proyecto 2/RoadFighter/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
     Error: Peak virtual memory: 4703 megabytes
-    Error: Processing ended: Fri May 05 10:55:31 2023
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:23
+    Error: Processing ended: Fri May 05 12:08:03 2023
+    Error: Elapsed time: 00:00:13
+    Error: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

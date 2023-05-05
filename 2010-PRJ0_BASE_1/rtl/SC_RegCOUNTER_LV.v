@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=4)(
+module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=8)(
 	//////////// OUTPUTS //////////
 	SC_RegGENERAL_data_OutBUS,
 	//////////// INPUTS //////////
@@ -51,8 +51,8 @@ reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Data;
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-	if (SC_RegGENERAL_InBUS_InHigh > 4'b0000)
-		RegGENERAL_Register = SC_RegGENERAL_Data+4'b0001;
+	if (SC_RegGENERAL_InBUS_InHigh > 8'b00000000)
+		RegGENERAL_Register = SC_RegGENERAL_Data+8'b00000001;
 	else
 		RegGENERAL_Signal = RegGENERAL_Register;
 	end	
@@ -69,6 +69,6 @@ end
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
 assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
-assign SC_RegGENERAL_Data = 4'b0000;
+assign SC_RegGENERAL_Data = RegGENERAL_Register;
 
 endmodule
