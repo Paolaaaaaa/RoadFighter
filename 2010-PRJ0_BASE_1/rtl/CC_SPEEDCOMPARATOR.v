@@ -32,7 +32,7 @@ module CC_SPEEDCOMPARATOR #(parameter SPEEDCOMPARATOR_DATAWIDTH=32)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output	CC_SPEEDCOMPARATOR_T0_OutLow;
+output	reg CC_SPEEDCOMPARATOR_T0_OutLow;
 input 	[SPEEDCOMPARATOR_DATAWIDTH-1:0] CC_SPEEDCOMPARATOR_data_InBUS;
 input 	[SPEEDCOMPARATOR_DATAWIDTH-1:0] CC_SPEEDCOMPARATOR_data_Time_cte_InBUS;
 //=======================================================
@@ -44,9 +44,9 @@ input 	[SPEEDCOMPARATOR_DATAWIDTH-1:0] CC_SPEEDCOMPARATOR_data_Time_cte_InBUS;
 always @(CC_SPEEDCOMPARATOR_data_InBUS)
 begin
 	if( CC_SPEEDCOMPARATOR_data_InBUS == CC_SPEEDCOMPARATOR_data_Time_cte_InBUS)
-		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b1;
-	else 
 		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b0;
+	else 
+		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b1;
 end
 
 endmodule
