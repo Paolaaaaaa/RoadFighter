@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=8)(
+module SC_RegGENERAL_ #(parameter RegGENERAL_DATAWIDTH=4)(
 	//////////// OUTPUTS //////////
 	SC_RegGENERAL_data_OutBUS,
 	//////////// INPUTS //////////
@@ -43,6 +43,8 @@ input		SC_RegGENERAL_InBUS_InHigh;
 //  REG/WIRE declarations
 //=======================================================
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Register;
+reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_tine;
+
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Signal;
 reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Data;
 //=======================================================
@@ -51,24 +53,21 @@ reg [RegGENERAL_DATAWIDTH-1:0] RegGENERAL_Data;
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-	if (SC_RegGENERAL_InBUS_InHigh > 8'b00000000)
-		RegGENERAL_Register = SC_RegGENERAL_Data+8'b00000001;
+	if (SC_RegGENERAL_InBUS_InHigh > 4'b0000)
+		RegGENERAL_Register = RegGENERAL_Data + 4'b0001;
 	else
-		RegGENERAL_Signal = RegGENERAL_Register;
-	end	
-//STATE REGISTER: SEQUENTIAL
-always @(posedge SC_RegGENERAL_CLOCK_50, posedge SC_RegGENERAL_RESET_InHigh)
+		RegGENERAL_Register = RegGENERAL_Signal;
+end	
+
+// STATE REGISTER: SEQUENTIAL
+always @(posedge SC_RegGENERAL_CLOCK_50 or posedge SC_RegGENERAL_RESET_InHigh)
 begin
 	if (SC_RegGENERAL_RESET_InHigh == 1'b1)
-		RegGENERAL_Register <= 0;
+		RegGENERAL_tine <= 0;
 	else
-		RegGENERAL_Register <= RegGENERAL_Signal;
+		RegGENERAL_tine <= RegGENERAL_Data;
 end
-//=======================================================
-//  Outputs
-//=======================================================
-//OUTPUT LOGIC: COMBINATIONAL
-assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
-assign SC_RegGENERAL_Data = RegGENERAL_Register;
 
+assign SC_RegGENERAL_data_OutBUS = RegGENERAL_Register;
 endmodule
+
